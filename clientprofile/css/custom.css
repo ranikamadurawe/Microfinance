@@ -1,0 +1,680 @@
+nav{
+    border-radius: 30px;
+    width: 100%;
+    background-color: lightblue;
+}
+
+.log{
+    margin-top: 6px;
+    padding-right: 10px;
+}
+.logout{
+    margin-top: 0px;
+    display:none;
+}
+.log:hover .logout{
+    display: block;
+}
+.logout:hover{
+    display: block;
+}
+
+select {
+    background-color: #fff;
+}
+
+.ch-container {
+    padding: 0 15px;
+}
+
+.top-block {
+    font-size: 14px;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    position: relative;
+    display: block;
+    line-height: 15px;
+    text-shadow: 0 0 1px #DDD;
+    text-decoration: none;
+    box-shadow: inset 0 0 0 1px #FAFAFA;
+    background: linear-gradient(to bottom, rgba(30, 87, 153, 0.2) 0%, rgba(125, 185, 232, 0) 100%);
+}
+
+.top-block span {
+    clear: both;
+}
+
+.top-block i {
+    font-size: 30px;
+}
+
+.top-block:hover {
+    text-decoration:none;
+}
+
+.notification {
+    display: block;
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    line-height: 16px;
+    height: 16px;
+    padding: 0 5px;
+    font-family: Arial, sans-serif;
+    color: white !important;
+    text-shadow: 0 1px hsla(0, 0%, 0%, 0.25);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 30px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 10px;
+    -webkit-box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.08), inset 0 1px hsla(0, 100%, 100%, 0.3);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.08), inset 0 1px hsla(0, 100%, 100%, 0.3);
+}
+
+.notification {
+    border-color: #2FABE9;
+    background-color: #67C2EF;
+    
+}
+
+.notification.green {
+    border-color: #5AAD34;
+    background-color: #78CD51;
+}
+
+.notification.yellow {
+    border-color: #F4A506;
+    background-color: #FABB3D;
+}
+
+.notification.red {
+    border-color: #FA5833;
+    background-color: #FA603D;
+}
+
+.sidebar-nav {
+    min-height: 0;
+    box-shadow: 0 0 10px #BDBDBD;
+    border-radius: 5px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    max-height: none;
+}
+
+.sidebar-nav > ul > li:not(.nav-header) {
+    margin-right: -2px;
+    margin-left: -2px;
+}
+
+
+.box-content.buttons {
+    min-height: 297px;
+}
+.side{
+    padding-left: 10px;
+}
+.main-menu > li > a {
+    border: 1px solid rgba(221, 221, 221, 0.46);
+}
+
+.main-menu > li {
+    margin-top: 0 !important;
+}
+
+.sidebar-nav .nav-header {
+    display: block;
+    padding: 3px 15px;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #999999;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+
+.navbar {
+    border-radius: 0;
+    position: fixed;
+}
+
+ul.main-menu li:hover {
+    margin-left: 8px;
+}
+
+ul.main-menu li.active {
+    margin-left: 8px;
+}
+
+ul.main-menu li.nav-header:hover {
+    margin-left: 0;
+}
+
+ul.main-menu li:not(.nav-header) {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.accordion > ul {
+    display: none;
+    margin-left: 10px;
+}
+
+
+
+
+
+/*-----------addteacher and addkid-------------*/
+
+.add {
+    border-style: none;
+    border-radius: 30px;
+    width: 600px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-right: 30px;
+    height: 40px;
+}
+.send textarea{
+    border-style: none;
+    border-radius: 30px;
+    width: 400px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-right: 30px;
+    height: 180px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    resize: none;
+}
+.send textarea:focus{
+    outline: none;
+    border: 1px solid black; 
+}
+.full{
+    width: 835px;
+}
+.add:focus{
+    outline: none;
+    border: 1px solid black;
+}
+.addteacher ul{
+    padding-left: 10%;
+    list-style-type: none;
+}
+.addteacher h1{
+    padding-top: 20px;
+    padding-left: 5%;
+    font-size: 45px;
+    padding-bottom: 20px;
+}
+.addteacher label{
+    padding-right: 20px;
+}
+.op{
+    width: 120px;
+}
+.addteacher option{
+    border-style: none;
+}
+.btn1{ 
+    margin-top: 40px;
+    margin-left: 100px;
+    margin-bottom: 40px;
+    color:white; 
+    background-color: #0f537b;
+    width: 150px;
+    height: 45px;
+    border-radius: 30px;
+    border-style: none;
+    font-weight: bold;
+}
+.btn1:hover{
+    background-color: #1574ac;
+    color: black;
+}
+
+/*---------massage-------------*/
+
+.sendbtn{
+    margin-top: 40px;
+    margin-left: 100px;
+    margin-bottom: 40px;
+    color:white; 
+    background-color: #3eabe9;
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    border-style: none;
+}
+.inbox{
+    background-color: #c7cbd1;
+    border-radius: 30px;
+}
+.line{
+    background-color: black;
+    height: 2px;
+    width: 100%;
+}
+.user{
+    margin-top: 5px;
+    height: 60px;
+}
+
+.inbox h1{
+    font-size: 40px;
+}
+.inbox h3{
+    font-weight: bold;
+    color: black;
+    margin: 10px;
+}
+.add1 {
+    border-style: none;
+    border-radius: 30px;
+    width: 600px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    margin-right: 30px;
+    height: 45px;
+    align-content: center;
+}
+
+.add2 {
+    border-style: none;
+    border-radius: 30px;
+    width: 600px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    margin-right: 30px;
+    height: 100px;
+    align-content: center;
+    box-shadow: #ccc 5px;
+}
+.add3 {
+    border-style: none;
+    border-radius: 30px;
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    margin-right: 10px;
+    height: 45px;
+    align-content: center;
+}
+.adddrop {
+    border-style: none;
+    border-radius: 30px;
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-right: 30px;
+    height: 40px;
+}
+.adddrop:focus{
+    outline: none;
+    border: 1px solid black;
+}
+table{
+    margin-top: 500px;
+    margin:0 auto;
+    widows: 600px;
+}
+
+td.lcolumn{
+    text-align: left;
+    font-size: 20px;
+    color: #2FABE9; 
+}
+
+textarea{
+
+    resize:none;
+}
+
+.add1:focus{
+
+    outline: none;
+    border: 1px solid black;
+}
+
+.add2:focus{
+
+    outline: none;
+    border: 1px solid black;
+}
+
+.add3:focus{
+
+    outline: none;
+    border: 1px solid black;
+}
+
+td.bottom{
+
+    text-align: center;
+}
+table, td{
+    border:1pxsolid;
+}
+
+.center{
+
+    margin:0 auto;
+}
+
+
+.ch-container .row img{
+   
+    align-content: center;
+}
+
+profimage {
+    border: 2px solid red;
+    border-radius: 5px;
+}
+
+/*validity----------------------*/
+div {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+input + span {
+  padding-right: 30px;
+}
+
+input:invalid+span:after {
+  position: absolute; content: '✖';
+  padding-left: 5px;
+}
+
+input:valid+span:after {
+  position: absolute;
+  content: '✓';
+  padding-left: 5px;
+}
+
+img.user{
+    border-radius: 50%;
+}
+
+
+
+
+/*img edit---------------------------------------*/
+.img{
+    position: relative;
+    
+}
+.img img{
+    width: 150px;
+    height: 150px;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    -safari-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+
+}
+.img-show{
+    margin-left: 15px;
+    background-color: none;
+    position: absolute;
+    height: -30px;
+    width: 110px;
+    opacity: 0;
+	
+
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    -safari-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+
+}
+.img-show .center{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35px;
+    background-color: #16a085;
+    padding: 0px;
+}
+.img-show .center p{
+    color: white;
+    width: 150px;
+    text-align: left !important;
+    display: block;
+    padding: 8px;
+    font-size: 13px;
+}
+.img-box:hover .img-show{
+    opacity: 1;
+    z-index: 5;
+    background-color: none;
+}
+.img-box .img img{
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    z-index: 1;
+}
+.img-box:hover .img img{
+    transform: scale(1.1,1.1);
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    z-index: 9;
+}
+/*-------------------------pop up-----------------*/
+
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #0f537b;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+    width: 250px;
+    border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+	
+    
+}
+
+/* The "Forgot password" text */
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 20%;
+    }
+} 
+
+ /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 0px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5px auto; /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    /* Position it in the top right corner outside of the modal */
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+} 
+
+/*---------massage-------------*/
+.sendbtn{
+    margin-top: 40px;
+    margin-left: 100px;
+    margin-bottom: 40px;
+    color:white; 
+    background-color: #3eabe9;
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    border-style: none;
+}
+.mbox{
+    background-color: #c7cbd1;
+    border-radius: 20px;
+}
+.this:hover{
+    background-color: #e4e7e9;
+    border-radius: 20px;
+    border: 1px;
+}
+.line{
+    background-color: black;
+    height: 2px;
+    width: 100%;
+}
+.user{
+    margin-top: 5px;
+    height: 60px;
+}
+
+.inbox h1{
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+.inbox h3{
+    font-weight: bold;
+    color: black;
+    margin: 10px;
+}
+.tablink {
+    float: left;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.tablink:hover {
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 10px;
+}
+/*--------notification--------*/
+.notifi{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
