@@ -16,7 +16,12 @@ class Images
     {
         $dataconnect = new DbConnect();
         $database = $dataconnect->connect();
-        $id = $_SESSION['client']->getId();
+        if (isset($_SESSION['client'])){
+            $id = $_SESSION['client']->getId();
+        } else {
+            $id = $_POST['name'];
+        }
+
         $query = "SELECT * FROM clients WHERE client_id='$id'";
         $result = mysqli_query($database, $query);
         while ($row = mysqli_fetch_array($result)) {
