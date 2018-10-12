@@ -9,6 +9,7 @@
 
     <title>Profile</title>
     <?php
+    require_once '../Classes/client.php';
     require_once '../dbOperations/dbconnect.php';
     include_once "../Images.php";
     ?>
@@ -38,7 +39,7 @@
             <a class="nav-link" href="addUserRequest.php">Add Request</a>
           </li>
         </ul>
-        <form class="form-inline mt-2 mt-md-0" action="../logout.php">
+        <form class="form-inline mt-2 mt-md-0" action="../login/logout.php">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
         </form>
       </div>
@@ -79,8 +80,8 @@
 
                   $dataconnect = new DbConnect();
                   $link = $dataconnect->connect();
-                  //$query="select * from teacher where nic='{$_SESSION['nic']}'";
-                  $query = "SELECT * FROM clients WHERE client_id = 1";
+                  $id = $_SESSION['client']->getId();
+                  $query = "SELECT * FROM clients WHERE client_id='$id'";
                   $result = mysqli_query($link, $query);
 
                   while ($row = mysqli_fetch_array($result)) {

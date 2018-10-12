@@ -1,5 +1,7 @@
 <?php
-include('dbOperations/config 2.php');
+require_once '../Classes/client.php';
+require_once '../dbOperations/session.php';
+include('../dbOperations/config 2.php');
 
 
 if (isset($_POST['username']) and isset($_POST['password'])){
@@ -24,19 +26,21 @@ if (isset($_POST['username']) and isset($_POST['password'])){
 		$character = $_SESSION['characterid'];
 
         if ($character == 'Client'){
-            header("Location: Client/clienthome.php"); #client
+            $_SESSION['type'] = 'client';
+            $_SESSION['client'] = new client($obj->client_id);
+            header("Location: ../Client/clienthome.php"); #client
         }
         else if($character == 'Representaive'){
-            header("Location: Rep/rephome.php"); #representaive
+            header("Location: ../Rep/rephome.php"); #representaive
         }
         else if($character == 'Officer'){
-            header("Location: Officer/officerhome.php"); #officer
+            header("Location: ../Officer/officerhome.php"); #officer
         }
         else if($character == 'Manager'){
-            header("Location: Manager/managerhome.php"); #manager
+            header("Location: ../Manager/managerhome.php"); #manager
         }
         else if($character == 'Admin'){
-            header("Location: Admin/adminhome.php"); #admin
+            header("Location: ../Admin/adminhome.php"); #admin
         }
 	}
 	else{

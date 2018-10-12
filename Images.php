@@ -1,46 +1,53 @@
 <?php
+require_once 'Classes/client.php';
 require_once 'dbOperations/dbconnect.php';
-	class Images{
-		private $table;
-		public function __construct($table){
-			$this->table=$table;
-		}
+require_once 'dbOperations/session.php';
 
-		public function display(){
-				$dataconnect = new DbConnect();
-				$database=$dataconnect->connect();
-			$query = "SELECT photo FROM teacher WHERE nic='943632740v' ";
-			$result = mysqli_query($database,$query);
-			while($row = mysqli_fetch_array($result)){
-				if($row['photo']!=null){
-				echo '<img  class="user" height="150" width="150" alt="Avatar" src="data:photo;base64,'.$row['photo'].'" >';
-				}
-				else{
-					echo '<img  class="user" height="150" width="150" alt="Avatar" src="img\user.png" alt="Avatar">';
-				}
-			}
-		}
+class Images
+{
+    private $table;
 
-		public function saveImage($image){
-				$dataconnect = new DbConnect();
-				$database=$dataconnect->connect();
-				session_start();
-				$body="".$_SESSION['teacher']." have updated profile Picture";
+    public function __construct($table)
+    {
+        $this->table = $table;
+    }
 
-				$querynotify = "INSERT INTO notification VALUES ('','{$body}','{$_SESSION['teacher']}',0,0,1)";
-			$query = "UPDATE teacher SET photo=('$image') where nic='{$_SESSION['nic']}'";
-			$result = mysqli_query($database,$query);
+    public function display()
+    {
+        $dataconnect = new DbConnect();
+        $database = $dataconnect->connect();
+        $id = $_SESSION['client']->getId();
+        $query = "SELECT * FROM clients WHERE client_id='$id'";
+        $result = mysqli_query($database, $query);
+        while ($row = mysqli_fetch_array($result)) {
+            if ($row['photo'] != null) {
+                echo '<img  class="user" height="150" width="150" alt="Avatar" src="data:photo;base64,' . $row['photo'] . '" >';
+            } else {
+                echo '<img  class="user" height="150" width="150" alt="Avatar" src="dp.png" alt="Avatar">';
+            }
+        }
+    }
 
-			if ($result){
-				echo "<script type='text/javascript'>alert('Details Succesfully Updated')</script>";
-				mysqli_query($database,$querynotify);
+    public function saveImage($image)
+    {
+        $dataconnect = new DbConnect();
+        $database = $dataconnect->connect();
+        session_start();
+        $body = "" . $_SESSION['teacher'] . " have updated profile Picture";
 
-			}
-			else{
-				echo "<script type='text/javascript'>alert('Erroe Occured...Please retry!!!!')</script>";
-			}
-		}
-	}
+        $querynotify = "INSERT INTO notification VALUES ('','{$body}','{$_SESSION['teacher']}',0,0,1)";
+        $query = "UPDATE teacher SET photo=('$image') where nic='{$_SESSION['nic']}'";
+        $result = mysqli_query($database, $query);
+
+        if ($result) {
+            echo "<script type='text/javascript'>alert('Details Succesfully Updated')</script>";
+            mysqli_query($database, $querynotify);
+
+        } else {
+            echo "<script type='text/javascript'>alert('Erroe Occured...Please retry!!!!')</script>";
+        }
+    }
+}
 
 
 ?>

@@ -1,5 +1,6 @@
-<?php>
-include_once '../loginfirst.php';
+<?php
+require_once '../Classes/client.php';
+include_once '../login/loginfirst.php';
 ?>
 
 <!doctype html>
@@ -144,7 +145,8 @@ include_once '../loginfirst.php';
                     <?php
                     $dataconnect = new DbConnect();
                     $database = $dataconnect->connect();
-                    $query = "SELECT * FROM teacher WHERE nic='943632740v'";
+                    $id = $_SESSION['client']->getId();
+                    $query = "SELECT * FROM clients WHERE client_id='$id'";
 
                     $result = mysqli_query($database, $query);
 
@@ -156,12 +158,12 @@ include_once '../loginfirst.php';
 
                                 <tr>
                                     <td class="lcolumn" width="20%"><label for="full name">First Name </label> :</td>
-                                    <td><?php echo '<input type="textarea" class="form-control" name="firstname" value=' . $row['fname'] . ' pattern="[A-Za-z]{2,}" title = "Name Only can Contains letters" class="add1" ></br>' ?></td>
+                                    <td><?php echo '<input type="textarea" class="form-control" name="firstname" value=' . $row['first_name'] . ' pattern="[A-Za-z]{2,}" title = "Name Only can Contains letters" class="add1" ></br>' ?></td>
 
                                 </tr>
                                 <tr>
                                     <td class="lcolumn" width="20%"><label for="full name">Last Name </label> :</td>
-                                    <td><?php echo '<input class="form-control" type="textarea" name="lastname" value=' . $row['lname'] . ' pattern="[A-Za-z]{2,}" title = "Name Only can Contains letters" class="add1" ></br>' ?></td>
+                                    <td><?php echo '<input class="form-control" type="textarea" name="lastname" value=' . $row['last_name'] . ' pattern="[A-Za-z]{2,}" title = "Name Only can Contains letters" class="add1" ></br>' ?></td>
                                 </tr>
 
                                 <tr>
@@ -191,7 +193,7 @@ include_once '../loginfirst.php';
                                 </tr>
                                 <tr>
                                     <td class="lcolumn"><label for="telephone">TP Number </label> :</td>
-                                    <td><?php echo '<input  class="form-control" type="text" name="telephone" value=' . $row['phone'] . ' class="add1" minlength="10" maxlength="10" pattern="[0-9]{2,}" title=" Only numbers can add "></br>' ?></td>
+                                    <td><?php echo '<input  class="form-control" type="text" name="telephone" value=' . $row['tele_phone'] . ' class="add1" minlength="10" maxlength="10" pattern="[0-9]{2,}" title=" Only numbers can add "></br>' ?></td>
                                 </tr>
                                 <tr>
                                     <td class="lcolumn"><label for="bankname">Bank Name </label> :</td>
@@ -199,7 +201,7 @@ include_once '../loginfirst.php';
                                 </tr>
                                 <tr>
                                     <td class="lcolumn"><label for="accnum">Acc Number</label> :</td>
-                                    <td><?php echo '<label  name="accnum" class="add1">' . $row['accnum'] . '</label></br>' ?></td>
+                                    <td><?php echo '<label  name="accnum" class="add1">' . $row['acc_no'] . '</label></br>' ?></td>
                                 </tr>
                                 <tr>
                                     <td class="lcolumn"><label for="branch">Branch </label> :</td>

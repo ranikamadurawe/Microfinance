@@ -1,7 +1,8 @@
 <?php
-session_start();
+include('../dbOperations/dbconnect.php');
+include_once '../dbOperations/session.php';
 print_r($_SESSION);
-include('dbOperations/dbconnect.php');
+
 
 if (!array_key_exists("loginalertmsg", $_SESSION)) {
     $_SESSION['loginalertmsg'] = '';

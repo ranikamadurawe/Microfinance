@@ -1,5 +1,7 @@
-<?php>
-include_once '../loginfirst.php';
+<?php
+require_once '../Classes/client.php';
+include_once '../login/loginfirst.php';
+
 ?>
 
 
@@ -44,7 +46,7 @@ include_once '../loginfirst.php';
               <a class="nav-link" href="addUserRequest.php">Add Request</a>
             </li>
           </ul>
-          <form class="form-inline mt-2 mt-md-0" action="../logout.php">
+          <form class="form-inline mt-2 mt-md-0" action="../login/logout.php">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
           </form>
         </div>
@@ -67,3 +69,5 @@ include_once '../loginfirst.php';
     <!-- Placed at the end of the document so the pages load faster -->
   </body>
 </html>
+<?php
+print_r($_SESSION);

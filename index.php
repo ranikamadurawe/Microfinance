@@ -36,7 +36,7 @@
 
             </li>
           </ul>
-          <form class="form-inline mt-2 mt-md-0" action="login.php">
+          <form class="form-inline mt-2 mt-md-0" action="login/login.php">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
           </form>
         </div>
