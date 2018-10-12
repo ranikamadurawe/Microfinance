@@ -53,6 +53,70 @@
 
       </div>
       <h1>Welcome Admin</h1>
+
+
+
+          <div id="content" class="col-lg-10 col-sm-10">
+
+              <div class="container">
+              <div class="py-5 text-center" style="margin-top: 30px;">
+                  <h2>Grant Access</h2>
+              </div>
+              <div class="row">
+                  <div class="col-md-8 order-md-1">
+
+                      <?php
+                      require_once '../dbOperations/dbconnect.php';
+
+                      $dataconnect = new DbConnect();
+                      $link = $dataconnect->connect();
+                      $query = "SELECT * FROM pendingclients  ";
+                      $result = mysqli_query($link, $query);
+
+                      echo "<table class='table'>
+                          <thead>
+                          <tr>
+                              <th><b>Pending ID</b></th>
+                              <th><b>Client First Name</b></th>
+                              <th><b>Client Last Name</b></th>
+                              <th><b>Client Username</b></th>
+                              <th><b>Client Birthday</b></th>
+                              <th><b>Client Address</b></th>
+                              <th><b>Create/Remove Account</b></th>
+
+
+                          </tr>
+                          </thead>
+                          <tbody>";
+
+                          while($row = mysqli_fetch_array($result))
+                          {
+                          echo "<tr>";
+                              echo "<td>" . $row['pending_id'] . "</td>";
+                              echo "<td>" . $row['first_name'] . "</td>";
+                              echo "<td>" . $row['last_name'] . "</td>";
+                              echo "<td>" . $row['username'] . "</td>";
+                              echo "<td>" . $row['bday'] . "</td>";
+                              echo "<td>" . $row['address'] . "</td>";
+                              echo "<td><form action='../dbOperations/addUser.php' method='post'><input type='hidden' name='name' value='", $row['pending_id'] ,"'><input class='btn btn-primary btn-sm' type='submit' name='submit' value='Grant'></form>
+                              <form action='../dbOperations/RemoveRequest.php' method='post'><input type='hidden' name='name' value='", $row['pending_id'] ,"'><input class='btn btn-primary btn-sm' type='submit' name='submit' value='Remove'></form></td>";
+
+
+
+
+                          }
+                          echo "</tbody></table>";
+
+
+                          ?>
+
+
+                  </div>
+
+
+              </div>
+          </div>
+
       <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
         <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
