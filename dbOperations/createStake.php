@@ -1,27 +1,26 @@
 <?php
-  // get provided username and encrypted password
-  $provided_lname = trim( $_POST['lname'] );
-  $provided_fname = trim( $_POST['fname'] );
-  $provided_phone = trim( $_POST['phone'] );
-  $provided_address = trim( $_POST['address'] );
-  $provided_email = trim( $_POST['email'] );
-  $provided_uname = trim( $_POST['uname'] );
-  $provided_gender = trim( $_POST['gender'] );
-  $provided_nic = trim( $_POST['nic'] );
-  $provided_bday = trim( $_POST['bday'] );
+require_once '../Classes/rep.php';
+require_once '../dbOperations/session.php';
+// get provided username and encrypted password
+$provided_lname = trim($_POST['lname']);
+$provided_fname = trim($_POST['fname']);
+$provided_phone = trim($_POST['phone']);
+$provided_address = trim($_POST['address']);
+$provided_email = trim($_POST['email']);
+$provided_uname = trim($_POST['uname']);
+$provided_gender = trim($_POST['gender']);
+$provided_nic = trim($_POST['nic']);
+$provided_bday = trim($_POST['bday']);
 
-  
+$rep_id = $_SESSION['rep']->getRepId();
+$connection = mysqli_connect("localhost", "root", "", "microfinance");
+$query = "INSERT INTO clients (`rep_id`, `birthday`, `username`, `first_name`, `last_name`, `email`, `tele_phone`, `address`, `gender`, `nic`) 
+VALUES ('$rep_id', '$provided_bday', '$provided_uname', '$provided_fname', '$provided_lname', '$provided_email', '$provided_phone', '$provided_address','$provided_gender', '$provided_nic')";
 
+$result = mysqli_query($connection, $query);
 
+mysqli_close($connection);
 
-  // Login to DB as a Representative
-  /*$connection = mysqli_connect("localhost", "root", "", "authentication");
-
-  // query
-  $result = mysqli_query($connection, $query);
-
-  mysqli_close($connection);
-
-  */
-  header('Location: ../Rep/viewclients.php ');
+print_r($_POST);
+header('Location: ../Rep/viewclients.php ');
 ?>

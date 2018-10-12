@@ -58,3 +58,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
   </body>
 </html>
+<?php
+session_start();
+print_r($_SESSION);
