@@ -29,18 +29,24 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="rephome.php">Home </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">View my Clients</a>
+              <a class="nav-link" href="viewclients.php">View my Clients</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="viewpdetails.php">View Personal Info</a>
             </li>
           </ul>
+          <form class="form-inline mt-2 mt-md-0" action="../logout.php">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+          </form>
         </div>
       </nav>
     </header>
 
     <main role="main">
+
 
 
 
@@ -83,6 +89,14 @@
               </div>
 
               <div class="mb-3">
+                <label for="address">NIC</label>
+                <input type="text" class="form-control" id="nic" name="nic" placeholder="123456789V" pattern="[0-9]{9}[vV]"  required>
+                <div class="invalid-feedback">
+                  Please enter a valid NIC
+                </div>
+              </div>
+
+              <div class="mb-3">
                 <label for="email">Email <span class="text-muted">(Optional)</span></label>
                 <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com">
                 <div class="invalid-feedback">
@@ -100,11 +114,32 @@
 
               <div class="mb-3">
                 <label for="address2">Phone</label>
-                <input type="tel" class="form-control" id="tel" name="phone" placeholder="Valid phone Number" required>
+                <input type="tel" class="form-control" id="tel" name="phone" placeholder="Valid phone Number" required pattern="0[0-9]{9}">
                 <div class="invalid-feedback">
                   Please enter a phone number for client
                 </div>
               </div>
+
+
+
+              <div class="mb-3">
+                <label for="address2">Gender</label>
+                <label class="radio-inline form-control">
+                    <input type="radio" name="gender" value="M" checked>Male
+                  </label>
+                  <label class="radio-inline form-control">
+                    <input type="radio" name="gender" value="F" >Female
+                  </label>
+              </div>
+
+              <!--<div class="mb-3">
+                <label for="address2">Birthday</label>
+                <input type="tel" class="form-control" id="datepicker" name="bday">
+                <div class="invalid-feedback">
+                  Please enter a valid Phone number
+                </div>
+              </div>-->
+
 
 
               <hr class="mb-4">

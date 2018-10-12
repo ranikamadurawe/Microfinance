@@ -1,0 +1,4 @@
+1.Add picture and birthday to Createstakeholder.php
+2.add view for index.php
+3.logout functionality
+4.login user id to session

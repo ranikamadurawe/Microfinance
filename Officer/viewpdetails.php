@@ -1,6 +1,4 @@
-<?php>
-include_once '../loginfirst.php';
-?>
+
 
 <!doctype html>
 <html lang="en">
@@ -30,14 +28,11 @@ include_once '../loginfirst.php';
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="clienthome.php">Home</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="officerhome.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="viewprofile.php">View Personal Data</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="loanapplication.php">Apply for loan</a>
+              <a class="nav-link" href="viewloanrequests.php">View my Loan Requests</a>
             </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0" action="../logout.php">
@@ -51,36 +46,7 @@ include_once '../loginfirst.php';
       <div style="margin-top:100px;">
 
       </div>
-      <div class="banner">
-         <h1>Add User Request</h1>
-      </div>
-      <form action="addUserRequest.php" method="POST">
-            User ID: <input type="text" name="userID" required="userID"/> <br/> <br/>
-            UserName:  <input type="text" name="userName" required="userName"/> <br/> <br/>
-            Enter your request:<br/> <textarea rows="4" cols="50" name="request" required="required"> </textarea><br/> <br/>
-            <input type="submit" value="SUBMIT"/>
-      </form>
-      <?php
-      include_once '../dbOperations/dbconnect.php';
-         if($_SERVER["REQUEST_METHOD"] == "POST"){
-
-             $dataconnect = new DbConnect();
-             $link = $dataconnect->connect(); //Connect to database.
-
-         $userID = htmlentities($_POST['userID']);
-         $name = ($_POST['userName']);
-         $request =($_POST['request']);
-         $date = date('Y-m-d H:i:s');
-         $status = "pending";
-         $qry = mysqli_query($link,"INSERT INTO userRequest (userID, name, request, date, status) VALUES ('$userID','$name', '$request', '$date', ' $status')");
-
-   if($qry){
-   Print '<script>alert("Successfully Recorded!");</script>'; //
-   Print '<script>window.location.assign("addUserRequest.php");</script>';
-}
-}
-
-?>
+      <h1>Welcome Officer</h1>
       <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
         <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>

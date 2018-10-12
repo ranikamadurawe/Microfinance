@@ -7,10 +7,10 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Create new User</title>
+    <title>Profile</title>
     <?php
     require_once '../dbOperations/dbconnect.php';
-    include_once("../images.php");
+    include_once "../Images.php";
     ?>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -30,13 +30,21 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="rephome.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">View my Clients</a>
+                    <a class="nav-link" href="viewclients.php">View my Clients</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="createstakeholder.php">Create Stakeholder <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="viewpdetails.php">View Personal Info <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+            <form class="form-inline mt-2 mt-md-0" action="../logout.php">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+            </form>
         </div>
     </nav>
 </header>
@@ -69,10 +77,12 @@
             <div class="col-lg-10" align="left">
                 <?php
 
+                $provided_sname = trim( $_POST['name'] );
+
                 $dataconnect = new DbConnect();
                 $link = $dataconnect->connect();
                 //$query="select * from teacher where nic='{$_SESSION['nic']}'";
-                $query = "SELECT * FROM teacher WHERE nic='943632740v'";
+                $query = "SELECT * FROM clients WHERE client_id = $provided_sname";
                 $result = mysqli_query($link, $query);
 
                 while ($row = mysqli_fetch_array($result)) {
@@ -82,7 +92,7 @@
 
                             <tr>
                                 <td class="lcolumn" width="20%"><label for="full name">Full Name </label> :</td>
-                                <td><?php echo '<label  name="fullname" class="add1">' . $row['fname'] . ' ' . $row['lname'] . '</label></br>' ?></td>
+                                <td><?php echo '<label  name="fullname" class="add1">' . $row['first_name'] . ' ' . $row['lname'] . '</label></br>' ?></td>
                             </tr>
                             <tr>
                                 <td class="lcolumn" width="20%"><label for="id">ID Number </label> :</td>
@@ -101,36 +111,13 @@
                                 <td><?php echo '<label  name="gender" class="add1">' . $row['gender'] . '</label></br>' ?></td>
                             </tr>
                             <tr>
-                                <td class="lcolumn" width="20%"><label for="maritual">Maritual Status </label> :</td>
-                                <td><?php echo '<label  name="position" class="add1">' . $row['position'] . '</label></br>' ?></td>
-                            </tr>
-                            <tr>
                                 <td class="lcolumn" width="20%"><label for="phone">TP Number </label> :</td>
-                                <td><?php echo '<label  name="phone" class="add1">' . $row['phone'] . '</label></br>' ?></td>
-                            </tr>
-                            <tr>
-                                <td class="lcolumn" width="20%"><label for="bankname">Bank Name </label> :</td>
-                                <td><?php echo '<label  name="bank" class="add1">' . $row['bank'] . '</label></br>' ?></td>
-                            </tr>
-                            <tr>
-                                <td class="lcolumn" width="20%"><label for="accname">Acc Number</label> :</td>
-                                <td><?php echo '<label  name="accnum" class="add1">' . $row['accnum'] . '</label></br>' ?></td>
-                            </tr>
-                            <tr>
-                                <td class="lcolumn" width="20%"><label for="branch">Branch </label> :</td>
-                                <td><?php echo '<label  name="branch" class="add1">' . $row['branch'] . '</label></br>' ?></td>
+                                <td><?php echo '<label  name="phone" class="add1">' . $row['tele_phone'] . '</label></br>' ?></td>
                             </tr>
                             <tr>
                                 <td class="lcolumn" width="20%"><label for="adress">Address </label> :</td>
                                 <td><?php echo '<label  name="address" class="add1">' . $row['address'] . '</label></br>' ?></td>
                             </tr>
-                            <tr>
-                                <td class="bottom" colspan="2">
-                                    <button type="submit" name="changeprofile" class="btn1"><span><b>Change Profile</b></span>
-                                    </button>
-                                </td>
-                            </tr>
-
                         </table>
                     </form>
                     <?php

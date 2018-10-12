@@ -6,8 +6,11 @@
   $provided_address = trim( $_POST['address'] );
   $provided_email = trim( $_POST['email'] );
   $provided_uname = trim( $_POST['uname'] );
+  $provided_gender = trim( $_POST['gender'] );
+  $provided_nic = trim( $_POST['nic'] );
+  //$provided_uname = trim( $_POST['bday'] );
 
-  $rep_id = 
+
 
   // Login to DB as a Representative
   /*$connection = mysqli_connect("localhost", "root", "", "authentication");
@@ -18,5 +21,5 @@
   mysqli_close($connection);
 
   */
-  //header('Location: ../Rep/viewclients.php ');
+  header('Location: ../Rep/viewclients.php ');
 ?>

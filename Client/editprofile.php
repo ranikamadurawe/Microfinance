@@ -1,3 +1,7 @@
+<?php>
+include_once '../loginfirst.php';
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -85,7 +89,7 @@
                             <h1>Change Profile Photo</h1>
                             <div class="imgcontainer">
                                 <?php
-                                require_once 'dbOperations/dbconnect.php';
+                                require_once '../dbOperations/dbconnect.php';
 
                                 $dataconnect = new DbConnect();
                                 $database = $dataconnect->connect();
@@ -285,5 +289,3 @@
 
 </body>
 </html>
-
-
