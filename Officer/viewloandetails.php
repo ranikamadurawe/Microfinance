@@ -50,6 +50,29 @@
 
       </div>
       <h1>Welcome Officer</h1>
+      <div id="loan_details">
+      <?php
+        if(isset($_GET['loan_id'])&&!empty($_GET['loan_id'])){
+          $loan_id = $_GET['loan_id'];
+          $query = "SELECT * FROM `loanapplications` WHERE `loan_id` = $loan_id";
+          $dbconn = mysqli_connect("localhost", "madnisal", "password", "my_db");
+          $result = mysqli_query($dbconn, $query);
+          mysqli_close($dbconn);
+
+          if($result){
+            echo '<table class="table">';
+            foreach(mysqli_fetch_assoc($result) as $attrib => $value){
+              echo
+              '<tr>'
+                  .'<td style="font-weight:bold; background:#ccc;	height:30px; padding-left:8px; align:left">'.$attrib.'</td>'
+                  .'<td style="height:30px; padding-left:15px;">'.$value.'</td>'
+              .'</tr>';
+            }
+            echo '</table>';
+          }
+        }
+      ?>
+      </div>
       <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
         <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>

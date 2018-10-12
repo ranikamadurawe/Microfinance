@@ -29,14 +29,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="rephome.php">Home <span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="viewclients.php">View my Clients</a>
+                    <a class="nav-link" href="managerhome.php">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="createstakeholder.php">Create Stakeholder <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="viewloanrequests.php">View Loan Requests <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="viewpdetails.php">View Personal Info <span class="sr-only">(current)</span></a>
@@ -77,7 +74,7 @@
             <div class="col-lg-10" align="left">
                 <?php
 
-                $provided_sname = trim( $_POST['name'] );
+                $provided_sname = trim( $_GET['client_id'] );
 
                 $dataconnect = new DbConnect();
                 $link = $dataconnect->connect();
@@ -123,56 +120,54 @@
                     <?php
                 }
                 ?>
-
                 <h2>Loan Status</h2>
 
-                <?php
-                require_once '../dbOperations/dbconnect.php';
+                  <?php
+                  require_once '../dbOperations/dbconnect.php';
 
-                $dataconnect = new DbConnect();
-                $database = $dataconnect->connect();
+                  $dataconnect = new DbConnect();
+                  $database = $dataconnect->connect();
 
-                //$uid = $_SESSION['uid'];
-
-
-                if (mysqli_connect_errno())
-                {
-                echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                }
-
-                //rep_id=3 use $uid;
-                $result2 = mysqli_query($database,"SELECT * FROM loanapplications WHERE client_id=$provided_sname");
+                  //$uid = $_SESSION['uid'];
 
 
-                echo "<table class='table'>
-                <thead>
-                <tr>
-                <th>Client id</th>
-                <th>Loan Amount</th>
-                <th>Interest</th>
-                <th>Duration</th>
-                <th>Start Date</th>
-                <th>Approved</th>
-                </tr>
-                </thead>
-                <tbody>";
+                  if (mysqli_connect_errno())
+                  {
+                  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                  }
 
-                while($row = mysqli_fetch_array($result2))
-                {
-                echo "<tr>";
-                echo "<td>" . $row['client_id'] . "</td>";
-                echo "<td>" . $row['loan_amount'] . "</td>";
-                echo "<td>" . $row['interest_rate'] . "</td>";
-                echo "<td>" . $row['duration'] . "</td>";
-                echo "<td>" . $row['start_date'] . "</td>";
-                echo "<td>" . $row['approved'] . "</td>";
-                echo "</tr>";
-                }
-                echo "</tbody></table>";
+                  //rep_id=3 use $uid;
+                  $result2 = mysqli_query($database,"SELECT * FROM loanapplications WHERE client_id=$provided_sname");
 
-                mysqli_close($con);
-                ?>
-                </div>
+
+                  echo "<table class='table'>
+                  <thead>
+                  <tr>
+                  <th>Client id</th>
+                  <th>Loan Amount</th>
+                  <th>Interest</th>
+                  <th>Duration</th>
+                  <th>Start Date</th>
+                  <th>Approved</th>
+                  </tr>
+                  </thead>
+                  <tbody>";
+
+                  while($row = mysqli_fetch_array($result2))
+                  {
+                  echo "<tr>";
+                  echo "<td>" . $row['client_id'] . "</td>";
+                  echo "<td>" . $row['loan_amount'] . "</td>";
+                  echo "<td>" . $row['interest_rate'] . "</td>";
+                  echo "<td>" . $row['duration'] . "</td>";
+                  echo "<td>" . $row['start_date'] . "</td>";
+                  echo "<td>" . $row['approved'] . "</td>";
+                  echo "</tr>";
+                  }
+                  echo "</tbody></table>";
+
+                  mysqli_close($con);
+                  ?>
 
             </div>
 
