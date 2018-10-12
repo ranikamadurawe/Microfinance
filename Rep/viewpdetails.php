@@ -9,6 +9,7 @@
 
     <title>Profile</title>
     <?php
+    require_once '../Classes/rep.php';
     require_once '../dbOperations/dbconnect.php';
     include_once "../Images.php";
     ?>
@@ -78,9 +79,8 @@
 
                 $dataconnect = new DbConnect();
                 $link = $dataconnect->connect();
-                //$query="select * from teacher where nic='{$_SESSION['nic']}'";
-                // get query from rep
-                $query = "SELECT * FROM clients WHERE client_id = 1";
+                $rep_id = $_SESSION['rep']->getRepId();
+                $query = "SELECT * FROM representatives WHERE rep_id = '$rep_id'";
                 $result = mysqli_query($link, $query);
 
                 while ($row = mysqli_fetch_array($result)) {

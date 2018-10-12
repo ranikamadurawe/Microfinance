@@ -36,14 +36,16 @@
                     <a class="nav-link" href="viewclients.php">View my Clients</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="createstakeholder.php">Create Stakeholder <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="createstakeholder.php">Create Stakeholder <span
+                                class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="viewpdetails.php">View Personal Info <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="viewpdetails.php">View Personal Info <span
+                                class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0" action="../login/logout.php">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
             </form>
         </div>
     </nav>
@@ -83,8 +85,10 @@
 
                     $provided_sname = trim( $_POST['name'] );
 
+
                     $dataconnect = new DbConnect();
                     $link = $dataconnect->connect();
+
 
                     $query = "SELECT * FROM clients WHERE client_id = $provided_sname";
                     $result = mysqli_query($link, $query);
@@ -128,6 +132,7 @@
                     }
                     ?>
 
+
                     <h2>Loan Status</h2>
 
                     <?php
@@ -150,8 +155,8 @@
 
                     echo "<table class='table'>
                     <thead>
-                    <tr>
                     <th>Client id</th>
+                    <tr>
                     <th>Loan Amount</th>
                     <th>Interest</th>
                     <th>Duration</th>
