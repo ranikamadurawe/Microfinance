@@ -50,9 +50,9 @@ include_once '../login/loginfirst.php';
 </header>
 
 <main role="main">
-  <div style="margin-top:100px;">
+    <div style="margin-top:100px;">
 
-  </div>
+    </div>
 
     <div class="ch-container">
         <div class="row">
@@ -194,10 +194,6 @@ include_once '../login/loginfirst.php';
                                 <tr>
                                     <td class="lcolumn"><label for="telephone">TP Number </label> :</td>
                                     <td><?php echo '<input  class="form-control" type="text" name="telephone" value=' . $row['tele_phone'] . ' class="add1" minlength="10" maxlength="10" pattern="[0-9]{2,}" title=" Only numbers can add "></br>' ?></td>
-                                </tr>
-                                <tr>
-                                    <td class="lcolumn"><label for="bankname">Bank Name </label> :</td>
-                                    <td><?php echo '<label  name="bankname" class="add1">' . $row['bank'] . '</label></br>' ?></td>
                                 </tr>
                                 <tr>
                                     <td class="lcolumn"><label for="accnum">Acc Number</label> :</td>
