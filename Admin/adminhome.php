@@ -38,7 +38,10 @@
               <a class="nav-link" href="viewdetails.php">View Personal Info</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="viewUserRequest.php../logout.php" Requests</a>
+              <a class="nav-link" href="viewUserRequest.php">View User Requests</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="newemployee.php">Create New Employee</a>
             </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0" action="logout.php">

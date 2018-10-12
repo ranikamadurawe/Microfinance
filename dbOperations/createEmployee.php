@@ -9,9 +9,12 @@
   $provided_gender = trim( $_POST['gender'] );
   $provided_nic = trim( $_POST['nic'] );
   $provided_bday = trim( $_POST['bday'] );
+  $provided_etype = trim( $_POST['etype'] );
 
-  
+  echo $provided_etype;
 
+
+  //switch depending on etype
 
 
   // Login to DB as a Representative
@@ -23,5 +26,5 @@
   mysqli_close($connection);
 
   */
-  header('Location: ../Rep/viewclients.php ');
+  //header('Location: ../Rep/viewclients.php ');
 ?>

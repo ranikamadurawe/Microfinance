@@ -21,29 +21,32 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Microfinance</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="rephome.php">Home </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="viewclients.php">View my Clients</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="viewpdetails.php">View Personal Info</a>
-            </li>
-          </ul>
-          <form class="form-inline mt-2 mt-md-0" action="../logout.php">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
-          </form>
-        </div>
-      </nav>
-    </header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <a class="navbar-brand" href="#">Microfinance</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="adminhome.php">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="araccounts.php">Accept Revoke Accounts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="viewUserRequest.php">View User Requests</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="viewDetails.php">View Personal Info</a>
+              </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0" action="../logout.php">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+            </form>
+          </div>
+        </nav>
+      </header>
 
     <main role="main">
 
@@ -52,13 +55,13 @@
 
       <div class="container">
         <div class="py-5 text-center" style="margin-top: 30px;">
-          <h2>Create new Client</h2>
+          <h2>Create new Employee</h2>
         </div>
 
 
         <div class="row">
           <div class="col-md-8 order-md-1">
-            <form class="needs-validation" novalidate action="../dbOperations/createStake.php" method="POST">
+            <form class="needs-validation" novalidate action="../dbOperations/createEmployee.php" method="POST">
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="firstName">First name</label>
@@ -142,6 +145,22 @@
                   </label>
               </div>
 
+              <div class="mb-3">
+                <label for="address2">Employee type</label>
+                <label class="radio-inline form-control">
+                    <input type="radio" name="etype" value="admin" checked>Administrator
+                  </label>
+                  <label class="radio-inline form-control">
+                    <input type="radio" name="etype"  value="rep" >Representative
+                  </label>
+                  <label class="radio-inline form-control">
+                    <input type="radio" name="etype"  value="officer" >Officer
+                  </label>
+                  <label class="radio-inline form-control">
+                    <input type="radio" name="etype"  value="manager" >Manager
+                  </label>
+              </div>
+
               <!--<div class="mb-3">
                 <label for="address2">Birthday</label>
                 <input type="tel" class="form-control" id="datepicker" name="bday">
@@ -153,7 +172,7 @@
 
 
               <hr class="mb-4">
-              <button class="btn btn-primary btn-lg btn-block" type="submit" >Create new Client</button>
+              <button class="btn btn-primary btn-lg btn-block" type="submit" >Create new Employee</button>
             </form>
           </div>
         </div>

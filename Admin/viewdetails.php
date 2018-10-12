@@ -37,6 +37,9 @@
             <li class="nav-item">
               <a class="nav-link" href="viewUserRequest.php">View User Requests</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="newemployee.php">CreatenewEmployee</a>
+            </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0" action="../logout.php">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
@@ -90,7 +93,7 @@
 
                             <tr>
                                 <td class="lcolumn" width="20%"><label for="full name">Full Name </label> :</td>
-                                <td><?php echo '<label  name="fullname" class="add1">' . $row['first_name'] . ' ' . $row['lname'] . '</label></br>' ?></td>
+                                <td><?php echo '<label  name="fullname" class="add1">' . $row['first_name'] . ' ' . $row['last_name'] . '</label></br>' ?></td>
                             </tr>
                             <tr>
                                 <td class="lcolumn" width="20%"><label for="id">ID Number </label> :</td>

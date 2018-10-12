@@ -21,29 +21,26 @@
 <body>
 
   <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Microfinance</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="adminhome.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="araccounts.php">Accept Revoke Accounts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="viewUserRequest.php">View User Requests</a>
-            </li>
-          </ul>
-          <form class="form-inline mt-2 mt-md-0" action="../logout.php">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
-          </form>
-        </div>
-      </nav>
-    </header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Microfinance</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="managerhome.php">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="viewloanrequests.php">View my Loan Requests</a>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0" action="../logout.php">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+        </form>
+      </div>
+    </nav>
+  </header>
 
 <main role="main">
 
@@ -90,7 +87,7 @@
 
                             <tr>
                                 <td class="lcolumn" width="20%"><label for="full name">Full Name </label> :</td>
-                                <td><?php echo '<label  name="fullname" class="add1">' . $row['first_name'] . ' ' . $row['lname'] . '</label></br>' ?></td>
+                                <td><?php echo '<label  name="fullname" class="add1">' . $row['first_name'] . ' ' . $row['last_name'] . '</label></br>' ?></td>
                             </tr>
                             <tr>
                                 <td class="lcolumn" width="20%"><label for="id">ID Number </label> :</td>

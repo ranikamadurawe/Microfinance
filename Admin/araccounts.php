@@ -37,6 +37,9 @@
             <li class="nav-item">
               <a class="nav-link" href="viewUserRequest.php">View User Requests</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="newemployee.php">Create New Employee</a>
+            </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0" action="../logout.php">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>

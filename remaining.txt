@@ -2,6 +2,7 @@ Admin
 
 admin Home
 add revoke accounts
+create new employees
 
 Clients
 
@@ -14,6 +15,7 @@ managerhome
 
 
 Officer
+
 officerhome
 
 Manager/Officer
