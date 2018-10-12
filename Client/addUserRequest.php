@@ -1,7 +1,3 @@
-<?php>
-include_once '../loginfirst.php';
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -51,15 +47,45 @@ include_once '../loginfirst.php';
       <div style="margin-top:100px;">
 
       </div>
-      <div class="banner">
-         <h1>Add User Request</h1>
+
+      <div class="container">
+        <div class="banner">
+           <h1>Add User Request</h1>
+        </div>
+        <div class="row">
+        <form action="addUserRequest.php" class="needs-validation" method="POST">
+
+
+
+              <div class="mb-3">
+                <label for="uid">User ID</label>
+                <input class="form-control" type="text" name="userID" required="userID">
+                <div class="invalid-feedback">
+                  Please enter a valid UID
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="userName">Username</label>
+                <input class="form-control" type="text" name="userName" required="userName">
+                <div class="invalid-feedback">
+                  Please enter a username
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="uid">Request</label>
+                <textarea class="form-control" name="request" rows="7" cols="70" required="required"></textarea>
+                <div class="invalid-feedback">
+                  Please add a Request
+                </div>
+              </div>
+
+
+              <input  class="btn btn-primary" type="submit" value="SUBMIT"/>
+        </form>
+        </div>
       </div>
-      <form action="addUserRequest.php" method="POST">
-            User ID: <input type="text" name="userID" required="userID"/> <br/> <br/>
-            UserName:  <input type="text" name="userName" required="userName"/> <br/> <br/>
-            Enter your request:<br/> <textarea rows="4" cols="50" name="request" required="required"> </textarea><br/> <br/>
-            <input type="submit" value="SUBMIT"/>
-      </form>
       <?php
       include_once '../dbOperations/dbconnect.php';
          if($_SERVER["REQUEST_METHOD"] == "POST"){
