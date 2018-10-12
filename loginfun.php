@@ -41,12 +41,12 @@ if (isset($_POST['username']) and isset($_POST['password'])){
 	}
 	else{
 		$_SESSION['loginalertmsg'] = 'Password or Username is Incorrect';
-		header("Location: index.php");
+		header("Location: login.php");
 	}
 }
 else{
 	$_SESSION['loginalertmsg'] = 'Please Fill.';
-	header("Location: index.php");
+	header("Location: login.php");
 }
 
 
