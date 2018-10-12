@@ -1,5 +1,6 @@
 <?php
 require_once '../Classes/client.php';
+require_once '../Classes/rep.php';
 require_once '../dbOperations/session.php';
 include('../dbOperations/config 2.php');
 
@@ -27,10 +28,12 @@ if (isset($_POST['username']) and isset($_POST['password'])){
 
         if ($character == 'Client'){
             $_SESSION['type'] = 'client';
-            $_SESSION['client'] = new client($obj->client_id);
+            $_SESSION['client'] = new client($obj->userid);
             header("Location: ../Client/clienthome.php"); #client
         }
-        else if($character == 'Representaive'){
+        else if($character == 'Representative'){
+            $_SESSION['type'] = 'rep';
+            $_SESSION['rep'] = new rep($obj->userid);
             header("Location: ../Rep/rephome.php"); #representaive
         }
         else if($character == 'Officer'){
