@@ -96,7 +96,8 @@ include_once '../login/loginfirst.php';
 
                                 $dataconnect = new DbConnect();
                                 $database = $dataconnect->connect();
-                                $query = "SELECT photo FROM teacher WHERE nic='943632740v' ";
+                                $id = $_SESSION['client']->getId();
+                                $query = "SELECT * FROM clients WHERE client_id='$id'";
                                 $result = mysqli_query($database, $query);
                                 while ($row = mysqli_fetch_array($result)) {
                                     if ($row['photo'] != null) {

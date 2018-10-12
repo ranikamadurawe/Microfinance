@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require 'dbconnect.php';
 require '../images.php';
 $display = new Images('teacher');
@@ -7,7 +7,8 @@ $display = new Images('teacher');
 print_r($_SESSION);
 $databasecon = new DbConnect();
 $database = $databasecon->connect();
-$query = "UPDATE teacher SET fname='$_POST[firstname]',lname='$_POST[lastname]',email='$_POST[email]',position='$_POST[position]',phone='$_POST[telephone]',address='$_POST[address]' WHERE nic = '{$_SESSION{'nic'}}'";
+$id = $_SESSION['client']->getId();
+$query = "UPDATE clients SET first_name='$_POST[firstname]',last_name='$_POST[lastname]',email='$_POST[email]',marital_status='$_POST[position]',tele_phone='$_POST[telephone]',address='$_POST[address]' WHERE client_id = '$id'";
 
 //$body="".$_SESSION['teacher']." have updated profile";
 
@@ -17,12 +18,10 @@ $query = "UPDATE teacher SET fname='$_POST[firstname]',lname='$_POST[lastname]',
 if (isset($_POST["update"])) {
 
     mysqli_query($database, $query);
-    mysqli_query($database, $querynotify);
-    echo "<script type='text/javascript'>alert('Succesfully Updated!!')</script>";
 }
 
 
 ?>
 <script type=text/javascript>
-    window.location = '../Client/editprofile.php';
+    window.location = '../Client/viewprofile.php';
 </script>

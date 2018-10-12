@@ -69,5 +69,3 @@ include_once '../login/loginfirst.php';
     <!-- Placed at the end of the document so the pages load faster -->
   </body>
 </html>
-<?php
-print_r($_SESSION);
