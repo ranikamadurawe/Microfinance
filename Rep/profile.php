@@ -36,14 +36,16 @@
                     <a class="nav-link" href="viewclients.php">View my Clients</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="createstakeholder.php">Create Stakeholder <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="createstakeholder.php">Create Stakeholder <span
+                                class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="viewpdetails.php">View Personal Info <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="viewpdetails.php">View Personal Info <span
+                                class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0" action="../login/logout.php">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
             </form>
         </div>
     </nav>
@@ -77,7 +79,7 @@
             <div class="col-lg-10" align="left">
                 <?php
 
-                $provided_sname = trim( $_POST['name'] );
+                $provided_sname = trim($_POST['name']);
 
                 $dataconnect = new DbConnect();
                 $link = $dataconnect->connect();
@@ -92,7 +94,7 @@
 
                             <tr>
                                 <td class="lcolumn" width="20%"><label for="full name">Full Name </label> :</td>
-                                <td><?php echo '<label  name="fullname" class="add1">' . $row['first_name'] . ' ' . $row['lname'] . '</label></br>' ?></td>
+                                <td><?php echo '<label  name="fullname" class="add1">' . $row['first_name'] . ' ' . $row['last_name'] . '</label></br>' ?></td>
                             </tr>
                             <tr>
                                 <td class="lcolumn" width="20%"><label for="id">ID Number </label> :</td>
@@ -135,13 +137,12 @@
                 //$uid = $_SESSION['uid'];
 
 
-                if (mysqli_connect_errno())
-                {
-                echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
                 }
 
                 //rep_id=3 use $uid;
-                $result2 = mysqli_query($database,"SELECT * FROM loanapplications WHERE client_id=$provided_sname");
+                $result2 = mysqli_query($database, "SELECT * FROM loanapplications WHERE client_id=$provided_sname");
 
 
                 echo "<table class='table'>
@@ -150,34 +151,32 @@
                 <th>Client id</th>
                 <th>Loan Amount</th>
                 <th>Interest</th>
-                <th>Duration</th>
+                <th>Duration(months)</th>
                 <th>Start Date</th>
                 <th>Approved</th>
                 </tr>
                 </thead>
                 <tbody>";
 
-                while($row = mysqli_fetch_array($result2))
-                {
-                echo "<tr>";
-                echo "<td>" . $row['client_id'] . "</td>";
-                echo "<td>" . $row['loan_amount'] . "</td>";
-                echo "<td>" . $row['interest_rate'] . "</td>";
-                echo "<td>" . $row['duration'] . "</td>";
-                echo "<td>" . $row['start_date'] . "</td>";
-                echo "<td>" . $row['approved'] . "</td>";
-                echo "</tr>";
+                while ($row = mysqli_fetch_array($result2)) {
+                    echo "<tr>";
+                    echo "<td>" . $row['client_id'] . "</td>";
+                    echo "<td>" . $row['loan_amount'] . "</td>";
+                    echo "<td>" . $row['interest_rate'] . "</td>";
+                    echo "<td>" . $row['duration'] . "</td>";
+                    echo "<td>" . $row['start_date'] . "</td>";
+                    echo "<td>" . $row['approved'] . "</td>";
+                    echo "</tr>";
                 }
                 echo "</tbody></table>";
 
-                mysqli_close($con);
                 ?>
-                </div>
-
             </div>
 
-
         </div>
+
+
+    </div>
     </div>
     <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
