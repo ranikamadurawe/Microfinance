@@ -37,12 +37,18 @@ include_once '../login/loginfirst.php';
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">View my Clients</a>
-                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="clienthome.php">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="loanapplication.php">Apply for loan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="addUserRequest.php">Add Request</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="viewprofile.php">View my Personal Data</a>
+              </li>
             </ul>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
         </div>
@@ -68,7 +74,7 @@ include_once '../login/loginfirst.php';
                         <div class="img-box">
                             <div class="img" align="left">
                                 <?php
-                                $display = new Images('teacher');
+                                $display = new Images('client');
                                 $display->display();
                                 ?>
 
@@ -103,13 +109,13 @@ include_once '../login/loginfirst.php';
                                     if ($row['photo'] != null) {
                                         echo '<img  height="300" width="300" alt="Avatar" src="data:photo;base64,' . $row['photo'] . '" >';
                                     } else {
-                                        echo '<img  height="300" width="300" alt="Avatar" src="img\user.png" alt="Avatar">';
+                                        echo '<img  height="200" width="300" alt="Avatar" src="..\Images\db.png" alt="Avatar">';
                                     }
                                 }
                                 ?>
                             </div>
 
-                            <div class="container"
+                            <div class="container" style="margin-top:10px; margin-bottom:10px;"
                             ">
                             <div>
                                 <input type="file" name="image" class="btn btn-primary" id="fileLoader"

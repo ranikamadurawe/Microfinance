@@ -125,6 +125,59 @@
                   }
                   ?>
 
+                  <div style="height:30px;">
+                    
+                  </div>
+
+                  <h2>Loan Status</h2>
+
+                  <?php
+                  require_once '../dbOperations/dbconnect.php';
+
+                  $dataconnect = new DbConnect();
+                  $database = $dataconnect->connect();
+
+                  //$uid = $_SESSION['uid'];
+
+
+                  if (mysqli_connect_errno())
+                  {
+                  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                  }
+
+                  $id = $_SESSION['client']->getId();
+                  $result2 = mysqli_query($database,"SELECT * FROM loanapplications WHERE client_id=$id");
+
+
+                  echo "<table class='table'>
+                  <thead>
+                  <tr>
+                  <th>Client id</th>
+                  <th>Loan Amount</th>
+                  <th>Interest</th>
+                  <th>Duration</th>
+                  <th>Start Date</th>
+                  <th>Approved</th>
+                  </tr>
+                  </thead>
+                  <tbody>";
+
+                  while($row = mysqli_fetch_array($result2))
+                  {
+                  echo "<tr>";
+                  echo "<td>" . $row['client_id'] . "</td>";
+                  echo "<td>" . $row['loan_amount'] . "</td>";
+                  echo "<td>" . $row['interest_rate'] . "</td>";
+                  echo "<td>" . $row['duration'] . "</td>";
+                  echo "<td>" . $row['start_date'] . "</td>";
+                  echo "<td>" . $row['approved'] . "</td>";
+                  echo "</tr>";
+                  }
+                  echo "</tbody></table>";
+
+                  mysqli_close($con);
+                  ?>
+
               </div>
 
 

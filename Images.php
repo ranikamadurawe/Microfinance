@@ -23,7 +23,7 @@ class Images
             if ($row['photo'] != null) {
                 echo '<img  class="user" height="150" width="150" alt="Avatar" src="data:photo;base64,' . $row['photo'] . '" >';
             } else {
-                echo '<img  class="user" height="150" width="150" alt="Avatar" src="dp.png" alt="Avatar">';
+                echo '<img  class="user" height="100" width="150" alt="Avatar" src="../Images/db.png" alt="Avatar">';
             }
         }
     }

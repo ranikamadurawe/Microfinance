@@ -50,134 +50,140 @@
 </header>
 
 <main role="main">
+  <div style="margin-top:100px;">
 
+  </div>
 
-    <div id="content" class="col-lg-10 col-sm-10">
-        <h1 align="center"><b>Client Profile</b></h1>
-        <div class=" row" align="center">
-            <div class="col-md-8">
-            </div>
-            <div class="col-md-2" align="right">
+    <div class="ch-container">
+      <div class="row">
+        <div id="content" class="col-lg-10 col-sm-10">
+            <h1 align="center"><b>Client Profile</b></h1>
+            <div class=" row" align="center">
+                <div class="col-md-8">
+                </div>
+                <div class="col-md-2" align="right">
 
-                <div>
-                    <div class="img" align="left">
-                        <?php
-                        $display = new Images('client');
-                        $display->display();
-                        ?>
+                    <div>
+                        <div class="img" align="left">
+                            <?php
+                            $display = new Images('client');
+                            $display->display();
+                            ?>
 
+                        </div>
                     </div>
+
+
+                </div>
+                <div class="col-md-8">
                 </div>
 
-
-            </div>
-            <div class="col-md-8">
-            </div>
-
-            <div class="col-lg-10" align="left">
-                <?php
-
-                $provided_sname = trim( $_POST['name'] );
-
-                $dataconnect = new DbConnect();
-                $link = $dataconnect->connect();
-                //$query="select * from teacher where nic='{$_SESSION['nic']}'";
-                $query = "SELECT * FROM clients WHERE client_id = $provided_sname";
-                $result = mysqli_query($link, $query);
-
-                while ($row = mysqli_fetch_array($result)) {
-                    ?>
-                    <form action=../Client/editprofile.php method="POST">
-                        <table style='margin-top:50px;' class="table">
-
-                            <tr>
-                                <td class="lcolumn" width="20%"><label for="full name">Full Name </label> :</td>
-                                <td><?php echo '<label  name="fullname" class="add1">' . $row['first_name'] . ' ' . $row['lname'] . '</label></br>' ?></td>
-                            </tr>
-                            <tr>
-                                <td class="lcolumn" width="20%"><label for="id">ID Number </label> :</td>
-                                <td><?php echo '<label  name="nic" class="add1">' . $row['nic'] . '</label></br>' ?></td>
-                            </tr>
-                            <tr>
-                                <td class="lcolumn" width="20%"><label for="email">E-Mail </label> :</td>
-                                <td><?php echo '<label  name="email" class="add1">' . $row['email'] . '</label></br>' ?></td>
-                            </tr>
-                            <tr>
-                                <td class="lcolumn" width="20%"><label for="birthday">Birthday </label> :</td>
-                                <td><?php echo '<label  name="birthday" class="add1">' . $row['birthday'] . '</label></br>' ?></td>
-                            </tr>
-                            <tr>
-                                <td class="lcolumn" width="20%"><label for="gender">Sex </label> :</td>
-                                <td><?php echo '<label  name="gender" class="add1">' . $row['gender'] . '</label></br>' ?></td>
-                            </tr>
-                            <tr>
-                                <td class="lcolumn" width="20%"><label for="phone">TP Number </label> :</td>
-                                <td><?php echo '<label  name="phone" class="add1">' . $row['tele_phone'] . '</label></br>' ?></td>
-                            </tr>
-                            <tr>
-                                <td class="lcolumn" width="20%"><label for="adress">Address </label> :</td>
-                                <td><?php echo '<label  name="address" class="add1">' . $row['address'] . '</label></br>' ?></td>
-                            </tr>
-                        </table>
-                    </form>
+                <div class="col-lg-10" align="left">
                     <?php
-                }
-                ?>
 
-                <h2>Loan Status</h2>
+                    $provided_sname = trim( $_POST['name'] );
 
-                <?php
-                require_once '../dbOperations/dbconnect.php';
+                    $dataconnect = new DbConnect();
+                    $link = $dataconnect->connect();
 
-                $dataconnect = new DbConnect();
-                $database = $dataconnect->connect();
+                    $query = "SELECT * FROM clients WHERE client_id = $provided_sname";
+                    $result = mysqli_query($link, $query);
 
-                //$uid = $_SESSION['uid'];
+                    while ($row = mysqli_fetch_array($result)) {
+                        ?>
+                        <form action=../Client/editprofile.php method="POST">
+                            <table style='margin-top:50px;' class="table">
+
+                                <tr>
+                                    <td class="lcolumn" width="20%"><label for="full name">Full Name </label> :</td>
+                                    <td><?php echo '<label  name="fullname" class="add1">' . $row['first_name'] . ' ' . $row['lname'] . '</label></br>' ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="lcolumn" width="20%"><label for="id">ID Number </label> :</td>
+                                    <td><?php echo '<label  name="nic" class="add1">' . $row['nic'] . '</label></br>' ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="lcolumn" width="20%"><label for="email">E-Mail </label> :</td>
+                                    <td><?php echo '<label  name="email" class="add1">' . $row['email'] . '</label></br>' ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="lcolumn" width="20%"><label for="birthday">Birthday </label> :</td>
+                                    <td><?php echo '<label  name="birthday" class="add1">' . $row['birthday'] . '</label></br>' ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="lcolumn" width="20%"><label for="gender">Sex </label> :</td>
+                                    <td><?php echo '<label  name="gender" class="add1">' . $row['gender'] . '</label></br>' ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="lcolumn" width="20%"><label for="phone">TP Number </label> :</td>
+                                    <td><?php echo '<label  name="phone" class="add1">' . $row['tele_phone'] . '</label></br>' ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="lcolumn" width="20%"><label for="adress">Address </label> :</td>
+                                    <td><?php echo '<label  name="address" class="add1">' . $row['address'] . '</label></br>' ?></td>
+                                </tr>
+                            </table>
+                        </form>
+                        <?php
+                    }
+                    ?>
+
+                    <h2>Loan Status</h2>
+
+                    <?php
+                    require_once '../dbOperations/dbconnect.php';
+
+                    $dataconnect = new DbConnect();
+                    $database = $dataconnect->connect();
+
+                    //$uid = $_SESSION['uid'];
 
 
-                if (mysqli_connect_errno())
-                {
-                echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                }
+                    if (mysqli_connect_errno())
+                    {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                    }
 
-                //rep_id=3 use $uid;
-                $result2 = mysqli_query($database,"SELECT * FROM loanapplications WHERE client_id=$provided_sname");
+                    //rep_id=3 use $uid;
+                    $result2 = mysqli_query($database,"SELECT * FROM loanapplications WHERE client_id=$provided_sname");
 
 
-                echo "<table class='table'>
-                <thead>
-                <tr>
-                <th>Client id</th>
-                <th>Loan Amount</th>
-                <th>Interest</th>
-                <th>Duration</th>
-                <th>Start Date</th>
-                <th>Approved</th>
-                </tr>
-                </thead>
-                <tbody>";
+                    echo "<table class='table'>
+                    <thead>
+                    <tr>
+                    <th>Client id</th>
+                    <th>Loan Amount</th>
+                    <th>Interest</th>
+                    <th>Duration</th>
+                    <th>Start Date</th>
+                    <th>Approved</th>
+                    </tr>
+                    </thead>
+                    <tbody>";
 
-                while($row = mysqli_fetch_array($result2))
-                {
-                echo "<tr>";
-                echo "<td>" . $row['client_id'] . "</td>";
-                echo "<td>" . $row['loan_amount'] . "</td>";
-                echo "<td>" . $row['interest_rate'] . "</td>";
-                echo "<td>" . $row['duration'] . "</td>";
-                echo "<td>" . $row['start_date'] . "</td>";
-                echo "<td>" . $row['approved'] . "</td>";
-                echo "</tr>";
-                }
-                echo "</tbody></table>";
+                    while($row = mysqli_fetch_array($result2))
+                    {
+                    echo "<tr>";
+                    echo "<td>" . $row['client_id'] . "</td>";
+                    echo "<td>" . $row['loan_amount'] . "</td>";
+                    echo "<td>" . $row['interest_rate'] . "</td>";
+                    echo "<td>" . $row['duration'] . "</td>";
+                    echo "<td>" . $row['start_date'] . "</td>";
+                    echo "<td>" . $row['approved'] . "</td>";
+                    echo "</tr>";
+                    }
+                    echo "</tbody></table>";
 
-                mysqli_close($con);
-                ?>
+                    mysqli_close($con);
+                    ?>
+                    </div>
+
                 </div>
 
+
             </div>
-
-
         </div>
+      </div>
     </div>
     <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
