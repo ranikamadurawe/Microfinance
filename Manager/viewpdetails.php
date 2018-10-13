@@ -15,6 +15,7 @@
     require_once '../dbOperations/dbconnect.php';
     include_once "../Images.php";
     include_once '../dbOperations/session.php';
+    require_once '../login/checklogin.php';
     ?>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"

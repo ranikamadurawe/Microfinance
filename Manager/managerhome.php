@@ -1,4 +1,6 @@
-../logout.php
+<?php
+require_once '../login/checklogin.php';
+?>
 
 <!doctype html>
 <html lang="en">

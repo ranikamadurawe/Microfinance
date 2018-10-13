@@ -11,6 +11,7 @@
 
     <title>View my Details</title>
     <?php
+    require_once '../login/checklogin.php';
     require_once '../dbOperations/dbconnect.php';
     include_once "../Images.php";
     ?>

@@ -1,4 +1,4 @@
-manager / admin database
+admin database
 going without login
 wrong urls
 filling database

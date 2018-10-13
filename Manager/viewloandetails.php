@@ -56,6 +56,7 @@
     <h1>Welcome Manager</h1>
     <div id="loan_details">
         <?php
+        require_once '../login/checklogin.php';
         if (isset($_GET['loan_id']) && !empty($_GET['loan_id'])) {
             $loan_id = $_GET['loan_id'];
             $query = "SELECT * FROM `loanapplications` WHERE `loan_id` = $loan_id";

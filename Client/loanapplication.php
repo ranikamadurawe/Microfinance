@@ -1,5 +1,5 @@
 <?php
-include_once '../login/loginfirst.php';
+require_once '../login/checklogin.php';
 ?>
 
 
