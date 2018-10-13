@@ -2,6 +2,7 @@
 include_once '../Classes/client.php';
 include_once '../dbOperations/session.php';
 include_once '../dbOperations/dbconnect.php';
+require_once '../login/checklogin.php';
 ?>
 <!doctype html>
 <html lang="en">

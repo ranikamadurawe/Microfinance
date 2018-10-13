@@ -1,5 +1,4 @@
-manager / admin database
-going without login
+admin database
 wrong urls
 filling database
 5 home pages

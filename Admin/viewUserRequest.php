@@ -74,6 +74,7 @@
                             <th>Action</th>
                         </tr>
                         <?php
+                        require_once '../login/checklogin.php';
                         $servername = "localhost";
                         $username = "root";
                         $password = "";

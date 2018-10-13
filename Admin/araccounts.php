@@ -70,6 +70,7 @@
                 <div class="col-md-8 order-md-1">
 
                     <?php
+                    require_once '../login/checklogin.php';
                     require_once '../dbOperations/dbconnect.php';
 
                     $dataconnect = new DbConnect();

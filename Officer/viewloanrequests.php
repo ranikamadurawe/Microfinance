@@ -57,6 +57,7 @@
     <h1>Welcome Loan Requests</h1>
     <div id="loan_list">
         <?php
+        require_once '../login/checklogin.php';
         if (isset($_GET['loan_id']) && !empty($_GET['loan_id'])) {
             $loan_id = $_GET['loan_id'];
             $query = "SELECT `client_id`, CONCAT(`first_name`, ' ', `last_name`), `approved`" .
@@ -72,19 +73,19 @@
                 $approved_status = $result[2];
                 if (isset($_GET['approve'])) {
                     $query = "UPDATE `loanapplications`" .
-                        "SET `approved` = '1'" .
+                        "SET `approved` = 'approved'" .
                         "WHERE `loan_id` = '$loan_id' " .
                         "LIMIT 1";
                     $aproval_status = "aproved";
                 } else if (isset($_GET['reject'])) {
                     $query = "UPDATE `loanapplications`" .
-                        "SET `approved` = '0'" .
+                        "SET `approved` = 'rejected'" .
                         "WHERE `loan_id` = '$loan_id' " .
                         "LIMIT 1";
                     $aproval_status = "disaproved";
                 } else if (isset($_GET['reset'])) {
                     $query = "UPDATE `loanapplications`" .
-                        "SET `approved` = NULL " .
+                        "SET `approved` = 'pending' " .
                         "WHERE `loan_id` = '$loan_id' " .
                         "LIMIT 1";
                     $aproval_status = "Reset";
@@ -130,14 +131,16 @@
                     '<tr><th>Client ID</th><th>Loan ID</th><th>Name</th></tr>';
 
                 while ($customer = mysqli_fetch_row($result)) {
-                    $status = $customer[3] == NULL ? 1 : 0;
+                    $status = $customer[3];
                     echo
                         '<tr>'
-                        . '<td width="auto"><a class="_button" href="profile.php?client_id=' . $customer[1] . '">' . $customer[0] . '</a></td>'
+                        . '<td width="auto"><a class="_button" href="profile.php?client_id=' . $customer[0] . '">' . $customer[0] . '</a></td>'
                         . '<td width="auto""><a class="_button" href="viewloandetails.php?loan_id=' . $customer[1] . '">' . $customer[1] . '</a></td>'
                         . '<td width="auto"">' . $customer[2] . '</td>'
                         . '<td align="center">';
-                    if ($status) {
+                    if ($status == 'pending') {
+                        echo '<a class="_button" href="?loan_id=' . $customer[1] . '&approve=#">Approve</a></br>'
+                            . '<a class="_button" href="?loan_id=' . $customer[1] . '&reject=#">Reject</a>';
                     } else {
                         $text = $customer[3];
                         echo $text . '</br><a class="_button" href="?loan_id=' . $customer[1] . '&reset=#">Reset</a>';

@@ -12,16 +12,16 @@ if (!array_key_exists("user_login_status", $_SESSION)) {
     $_SESSION['user_login_status'] = '';
 }
 
-if (array_key_exists('characterid', $_SESSION)) {
-    $character = (int)$_SESSION['characterid'];
-    if ($character == 1 and $_SESSION['user_login_status'] == "alreadylogedin") {
-        header("Location: PatientProfile.php"); #client
-    } else if ($character == 2 and $_SESSION['user_login_status'] == "alreadylogedin") {
-        header("Location: docHeader.php"); #representative
-    } else if ($character == 3 and $_SESSION['user_login_status'] == "alreadylogedin") {
-        header("Location: pharmacyhome.php"); #officer
-    } else if ($character == 4 and $_SESSION['user_login_status'] == "alreadylogedin") {
-        header("Location: FinanceHome.php"); #manager
+if (array_key_exists('type', $_SESSION)) {
+    $character = $_SESSION['type'];
+    if ($character == 'client' and $_SESSION['user_login_status'] == "alreadylogedin") {
+        header("Location: ../Client/clienthome.php"); #client
+    } else if ($character == 'rep' and $_SESSION['user_login_status'] == "alreadylogedin") {
+        header("Location: ../Rep/rephome.php"); #representative
+    } else if ($character == 'officer' and $_SESSION['user_login_status'] == "alreadylogedin") {
+        header("Location: ../Officer/officerhome.php"); #officer
+    } else if ($character == 'manager' and $_SESSION['user_login_status'] == "alreadylogedin") {
+        header("Location: ../Manager/managerhome.php"); #manager
     } else if ($character == 5 and $_SESSION['user_login_status'] == "alreadylogedin") {
         header("Location: ReceptionistProfile.php"); #admin
     }
