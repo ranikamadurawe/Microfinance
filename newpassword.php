@@ -47,7 +47,7 @@
 
 
 
-      <form novalidate class="form-password">
+      <form method="post" novalidate class="form-password" action="dbOperations/changepassword.php">
         <h1 class="h3 mb-3 font-weight-normal">New password form</h1>
         <div >
           <label for="inputEmail" class="sr-only">New Password</label>
@@ -91,7 +91,7 @@
           // Loop over them and prevent submission
           var validation = Array.prototype.filter.call(forms, function(form) {
             form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false || form.value.new) {
+              if (form.checkValidity() === false) {
                 console.log("Rda");
                 event.preventDefault();
                 event.stopPropagation();
