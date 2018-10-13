@@ -22,4 +22,20 @@ class officer
 
     }
 
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    public function getBranch()
+    {
+        return $this->branch;
+    }
+
+    public function getOfficerId()
+    {
+        return $this->officer_id;
+    }
+
+
 }

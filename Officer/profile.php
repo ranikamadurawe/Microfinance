@@ -91,7 +91,7 @@
 
                             <tr>
                                 <td class="lcolumn" width="20%"><label for="full name">Full Name </label> :</td>
-                                <td><?php echo '<label  name="fullname" class="add1">' . $row['first_name'] . ' ' . $row['lname'] . '</label></br>' ?></td>
+                                <td><?php echo '<label  name="fullname" class="add1">' . $row['first_name'] . ' ' . $row['last_name'] . '</label></br>' ?></td>
                             </tr>
                             <tr>
                                 <td class="lcolumn" width="20%"><label for="id">ID Number </label> :</td>
@@ -167,7 +167,7 @@
                 }
                 echo "</tbody></table>";
 
-                mysqli_close($con);
+
                 ?>
 
             </div>

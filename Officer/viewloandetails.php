@@ -55,7 +55,7 @@
         if (isset($_GET['loan_id']) && !empty($_GET['loan_id'])) {
             $loan_id = $_GET['loan_id'];
             $query = "SELECT * FROM `loanapplications` WHERE `loan_id` = $loan_id";
-            $dbconn = mysqli_connect("localhost", "madnisal", "password", "my_db");
+            $dbconn = mysqli_connect("localhost", "root", "", "microfinance");
             $result = mysqli_query($dbconn, $query);
             mysqli_close($dbconn);
 

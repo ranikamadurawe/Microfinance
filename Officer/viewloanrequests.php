@@ -57,7 +57,7 @@
                 "WHERE `loan_id` = '$loan_id' " .
                 "LIMIT 1";
 
-            $dbconn = mysqli_connect("localhost", "madnisal", "password", "my_db");
+            $dbconn = mysqli_connect("localhost", "root", "", "microfinance");
             $result = mysqli_fetch_row(mysqli_query($dbconn, $query));
             if ($result) {
                 $customer_id = $result[0];
@@ -88,7 +88,7 @@
                     echo "</br>"
                         . "<div align='center'>Customer $customer_id, $customer_name's loan application $loan_id has $aproval_status Successfully.</div>"
                         . "<br>"
-                        . "<div align='right'><a class='_button' href='approve_loan.php'><-Back to List</a></div>";
+                        . "<div align='right'><a class='_button' href='viewloanrequests.php'><-Back to List</a></div>";
                 }
             }
             ?>
@@ -110,12 +110,12 @@
                 $query = "SELECT `client_id`, `loan_id`, CONCAT(`first_name`, ' ', `last_name`), `approved`" .
                     "FROM `clients` NATURAL JOIN `loanapplications`" .
                     "WHERE `client_id` LIKE '$search_text%' OR CONCAT(`first_name`, ' ', `last_name`) LIKE '%$search_text%' OR `loan_id` LIKE '$search_text%'";
-                echo "<div align='left'><a class='_button' href='approve_loan'><-Back to Full List</a></br></br></div>";
+                echo "<div align='left'><a class='_button' href='viewloanrequests.php'><-Back to Full List</a></br></br></div>";
             } else {
                 $query = "SELECT `client_id`, `loan_id`, CONCAT(`first_name`, ' ', `last_name`), `approved`" .
                     "FROM `clients` NATURAL JOIN `loanapplications`";
             }
-            $dbconn = mysqli_connect("localhost", "madnisal", "password", "my_db");
+            $dbconn = mysqli_connect("localhost", "root", "", "microfinance");
             $result = mysqli_query($dbconn, $query);
             mysqli_close($dbconn);
             if ($result) {
@@ -132,14 +132,16 @@
                         . '<td align="center">';
                     if ($status) {
                     } else {
-                        $text = $customer[3] == 0 ? "rejected" : "Appoved";
+                        $text = $customer[3];
                         echo $text . '</br><a class="_button" href="?loan_id=' . $customer[1] . '&reset=#">Reset</a>';
                     }
                     echo '</td>'
                         . '</tr>';
                 }
                 echo '</table>';
+
             }
+
         }
         ?>
     </div>
