@@ -9,7 +9,7 @@
 
     <title>View Loan Requests</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="../css/custom.css" rel="stylesheet">
+    <link href="../css/custom.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="managerhome.php">Home</a>
                 </li>
                 <li class="nav-item">
@@ -42,7 +42,7 @@
                                 class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <form class="form-inline mt-2 mt-md-0" action="../logout.php">
+            <form class="form-inline mt-2 mt-md-0" action="../login/logout.php">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
             </form>
         </div>
@@ -65,7 +65,7 @@
                 "WHERE `loan_id` = '$loan_id' " .
                 "LIMIT 1";
 
-            $dbconn = mysqli_connect("localhost", "madnisal", "password", "my_db");
+            $dbconn = mysqli_connect("localhost", "root", "", "microfinance");
             $result = mysqli_fetch_row(mysqli_query($dbconn, $query));
             if ($result) {
                 $customer_id = $result[0];
@@ -73,19 +73,19 @@
                 $approved_status = $result[2];
                 if (isset($_GET['approve'])) {
                     $query = "UPDATE `loanapplications`" .
-                        "SET `approved` = '1'" .
+                        "SET `approved` = 'approved'" .
                         "WHERE `loan_id` = '$loan_id' " .
                         "LIMIT 1";
                     $aproval_status = "aproved";
                 } else if (isset($_GET['reject'])) {
                     $query = "UPDATE `loanapplications`" .
-                        "SET `approved` = '0'" .
+                        "SET `approved` = 'rejected'" .
                         "WHERE `loan_id` = '$loan_id' " .
                         "LIMIT 1";
                     $aproval_status = "disaproved";
                 } else if (isset($_GET['reset'])) {
                     $query = "UPDATE `loanapplications`" .
-                        "SET `approved` = NULL " .
+                        "SET `approved` = 'pending' " .
                         "WHERE `loan_id` = '$loan_id' " .
                         "LIMIT 1";
                     $aproval_status = "Reset";
@@ -96,7 +96,7 @@
                     echo "</br>"
                         . "<div align='center'>Customer $customer_id, $customer_name's loan application $loan_id has $aproval_status Successfully.</div>"
                         . "<br>"
-                        . "<div align='right'><a class='_button' href='approve_loan.php'><-Back to List</a></div>";
+                        . "<div align='right'><a class='_button' href='viewloanrequests.php'><-Back to List</a></div>";
                 }
             }
             ?>
@@ -123,7 +123,7 @@
                 $query = "SELECT `client_id`, `loan_id`, CONCAT(`first_name`, ' ', `last_name`), `approved`" .
                     "FROM `clients` NATURAL JOIN `loanapplications`";
             }
-            $dbconn = mysqli_connect("localhost", "madnisal", "password", "my_db");
+            $dbconn = mysqli_connect("localhost", "root", "", "microfinance");
             $result = mysqli_query($dbconn, $query);
             mysqli_close($dbconn);
             if ($result) {
@@ -131,18 +131,18 @@
                     '<tr><th>Client ID</th><th>Loan ID</th><th>Name</th><th>Approve</th></tr>';
 
                 while ($customer = mysqli_fetch_row($result)) {
-                    $status = $customer[3] == NULL ? 1 : 0;
+                    $status = $customer[3];
                     echo
                         '<tr>'
-                        . '<td width="auto"><a class="_button" href="profile.php?client_id=' . $customer[1] . '">' . $customer[0] . '</a></td>'
+                        . '<td width="auto"><a class="_button" href="profile.php?client_id=' . $customer[0] . '">' . $customer[0] . '</a></td>'
                         . '<td width="auto""><a class="_button" href="viewloandetails.php?loan_id=' . $customer[1] . '">' . $customer[1] . '</a></td>'
                         . '<td width="auto"">' . $customer[2] . '</td>'
                         . '<td align="center">';
-                    if ($status) {
+                    if ($status == 'pending') {
                         echo '<a class="_button" href="?loan_id=' . $customer[1] . '&approve=#">Approve</a></br>'
                             . '<a class="_button" href="?loan_id=' . $customer[1] . '&reject=#">Reject</a>';
                     } else {
-                        $text = $customer[3] == 0 ? "rejected" : "Appoved";
+                        $text = $customer[3];
                         echo $text . '</br><a class="_button" href="?loan_id=' . $customer[1] . '&reset=#">Reset</a>';
                     }
                     echo '</td>'
@@ -154,122 +154,123 @@
         ?>
     </div>
 
-<div style="height:50px">
-</div>
-
-      <footer class="page-footer font-small mdb-color lighten-3 pt-4">
-
-<!-- Footer Links -->
-<div class="container text-center text-md-left">
-
-  <!-- Grid row -->
-  <div class="row">
-
-    <!-- Grid column -->
-    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
-
-      <!-- Content -->
-      <h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
-      <p>Here you can use rows and columns here to organize your footer content.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate esse
-        quasi, veritatis totam voluptas nostrum.</p>
-
+    <div style="height:50px">
     </div>
-    <!-- Grid column -->
 
-    <hr class="clearfix w-100 d-md-none">
+    <footer class="page-footer font-small mdb-color lighten-3 pt-4">
 
-    <!-- Grid column -->
-    <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
 
-      <!-- Links -->
-      <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
+            <!-- Grid row -->
+            <div class="row">
 
-      <ul class="list-unstyled">
-        <li>
-          <p>
-            <a href="#!">PROJECTS</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href="#!">ABOUT US</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href="#!">BLOG</a>
-          </p>
-        </li>
-        <li>
-          <p>
-            <a href="#!">AWARDS</a>
-          </p>
-        </li>
-      </ul>
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
 
-    </div>
-    <!-- Grid column -->
+                    <!-- Content -->
+                    <h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
+                    <p>Here you can use rows and columns here to organize your footer content.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident
+                        voluptate esse
+                        quasi, veritatis totam voluptas nostrum.</p>
 
-    <hr class="clearfix w-100 d-md-none">
+                </div>
+                <!-- Grid column -->
 
-    <!-- Grid column -->
-    <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+                <hr class="clearfix w-100 d-md-none">
 
-      <!-- Contact details -->
-      <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
 
-      <ul class="list-unstyled">
-        <li>
-          <p>
-            <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
-        </li>
-        <li>
-          <p>
-            <i class="fa fa-envelope mr-3"></i> info@example.com</p>
-        </li>
-        <li>
-          <p>
-            <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
-        </li>
-        <li>
-          <p>
-            <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
-        </li>
-      </ul>
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
 
-    </div>
-    <!-- Grid column -->
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>
+                                <a href="#!">PROJECTS</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="#!">ABOUT US</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="#!">BLOG</a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="#!">AWARDS</a>
+                            </p>
+                        </li>
+                    </ul>
 
-    <hr class="clearfix w-100 d-md-none">
+                </div>
+                <!-- Grid column -->
 
-    <!-- Grid column -->
-    <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+                <hr class="clearfix w-100 d-md-none">
 
-      <!-- Social buttons -->
-      <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
 
-      <!-- Facebook -->
-      <a type="button" class="btn-floating btn-fb">
-        <i class="fa fa-facebook"></i>
-      </a>
-      
-    </div>
-    <!-- Grid column -->
+                    <!-- Contact details -->
+                    <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
 
-  </div>
-  <!-- Grid row -->
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>
+                                <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+                        </li>
+                        <li>
+                            <p>
+                                <i class="fa fa-envelope mr-3"></i> info@example.com</p>
+                        </li>
+                        <li>
+                            <p>
+                                <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+                        </li>
+                        <li>
+                            <p>
+                                <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+                        </li>
+                    </ul>
 
-</div>
-<!-- Footer Links -->
+                </div>
+                <!-- Grid column -->
 
-<!-- Copyright -->
-<div class="footer-copyright text-center py-3">© 2018 Copyright:
-  <a href=""> MicroFinance</a>
-</div>
-<!-- Copyright -->
+                <hr class="clearfix w-100 d-md-none">
 
-</footer>
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+
+                    <!-- Social buttons -->
+                    <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
+
+                    <!-- Facebook -->
+                    <a type="button" class="btn-floating btn-fb">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href=""> MicroFinance</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
 </main>
 
 <!-- Bootstrap core JavaScript
