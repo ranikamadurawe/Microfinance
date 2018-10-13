@@ -65,7 +65,7 @@
                 "WHERE `loan_id` = '$loan_id' " .
                 "LIMIT 1";
 
-            $dbconn = mysqli_connect("localhost", "madnisal", "password", "my_db");
+            $dbconn = mysqli_connect("localhost", "root", "", "microfinance");
             $result = mysqli_fetch_row(mysqli_query($dbconn, $query));
             if ($result) {
                 $customer_id = $result[0];
@@ -73,19 +73,19 @@
                 $approved_status = $result[2];
                 if (isset($_GET['approve'])) {
                     $query = "UPDATE `loanapplications`" .
-                        "SET `approved` = '1'" .
+                        "SET `approved` = 'approved'" .
                         "WHERE `loan_id` = '$loan_id' " .
                         "LIMIT 1";
                     $aproval_status = "aproved";
                 } else if (isset($_GET['reject'])) {
                     $query = "UPDATE `loanapplications`" .
-                        "SET `approved` = '0'" .
+                        "SET `approved` = 'rejected'" .
                         "WHERE `loan_id` = '$loan_id' " .
                         "LIMIT 1";
                     $aproval_status = "disaproved";
                 } else if (isset($_GET['reset'])) {
                     $query = "UPDATE `loanapplications`" .
-                        "SET `approved` = NULL " .
+                        "SET `approved` = 'pending' " .
                         "WHERE `loan_id` = '$loan_id' " .
                         "LIMIT 1";
                     $aproval_status = "Reset";
@@ -96,7 +96,7 @@
                     echo "</br>"
                         . "<div align='center'>Customer $customer_id, $customer_name's loan application $loan_id has $aproval_status Successfully.</div>"
                         . "<br>"
-                        . "<div align='right'><a class='_button' href='approve_loan.php'><-Back to List</a></div>";
+                        . "<div align='right'><a class='_button' href='viewloanrequests.php'><-Back to List</a></div>";
                 }
             }
             ?>
@@ -123,7 +123,7 @@
                 $query = "SELECT `client_id`, `loan_id`, CONCAT(`first_name`, ' ', `last_name`), `approved`" .
                     "FROM `clients` NATURAL JOIN `loanapplications`";
             }
-            $dbconn = mysqli_connect("localhost", "madnisal", "password", "my_db");
+            $dbconn = mysqli_connect("localhost", "root", "", "microfinance");
             $result = mysqli_query($dbconn, $query);
             mysqli_close($dbconn);
             if ($result) {
@@ -131,18 +131,18 @@
                     '<tr><th>Client ID</th><th>Loan ID</th><th>Name</th><th>Approve</th></tr>';
 
                 while ($customer = mysqli_fetch_row($result)) {
-                    $status = $customer[3] == NULL ? 1 : 0;
+                    $status = $customer[3];
                     echo
                         '<tr>'
-                        . '<td width="auto"><a class="_button" href="profile.php?client_id=' . $customer[1] . '">' . $customer[0] . '</a></td>'
+                        . '<td width="auto"><a class="_button" href="profile.php?client_id=' . $customer[0] . '">' . $customer[0] . '</a></td>'
                         . '<td width="auto""><a class="_button" href="viewloandetails.php?loan_id=' . $customer[1] . '">' . $customer[1] . '</a></td>'
                         . '<td width="auto"">' . $customer[2] . '</td>'
                         . '<td align="center">';
-                    if ($status) {
+                    if ($status == 'pending') {
                         echo '<a class="_button" href="?loan_id=' . $customer[1] . '&approve=#">Approve</a></br>'
                             . '<a class="_button" href="?loan_id=' . $customer[1] . '&reject=#">Reject</a>';
                     } else {
-                        $text = $customer[3] == 0 ? "rejected" : "Appoved";
+                        $text = $customer[3];
                         echo $text . '</br><a class="_button" href="?loan_id=' . $customer[1] . '&reset=#">Reset</a>';
                     }
                     echo '</td>'
