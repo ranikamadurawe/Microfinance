@@ -2,6 +2,7 @@
 require_once '../Classes/client.php';
 require_once '../Classes/rep.php';
 require_once '../Classes/officer.php';
+require_once '../Classes/manager.php';
 require_once '../dbOperations/session.php';
 include('../dbOperations/config 2.php');
 
@@ -40,6 +41,8 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
             $_SESSION['officer'] = new officer($obj->userid);
             header("Location: ../Officer/officerhome.php"); #officer
         } else if ($character == 'Manager') {
+            $_SESSION['type'] = 'manager';
+            $_SESSION['manager'] = new manager($obj->userid);
             header("Location: ../Manager/managerhome.php"); #manager
         } else if ($character == 'Admin') {
             header("Location: ../Admin/adminhome.php"); #admin
