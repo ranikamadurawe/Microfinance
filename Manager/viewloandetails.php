@@ -42,7 +42,7 @@
                                 class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <form class="form-inline mt-2 mt-md-0" action="../logout.php">
+            <form class="form-inline mt-2 mt-md-0" action="../login/logout.php">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
             </form>
         </div>
@@ -59,7 +59,7 @@
         if (isset($_GET['loan_id']) && !empty($_GET['loan_id'])) {
             $loan_id = $_GET['loan_id'];
             $query = "SELECT * FROM `loanapplications` WHERE `loan_id` = $loan_id";
-            $dbconn = mysqli_connect("localhost", "madnisal", "password", "my_db");
+            $dbconn = mysqli_connect("localhost", "root", "", "microfinance");
             $result = mysqli_query($dbconn, $query);
             mysqli_close($dbconn);
 
