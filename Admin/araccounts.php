@@ -69,7 +69,7 @@
 
                     $dataconnect = new DbConnect();
                     $link = $dataconnect->connect();
-                    $query = "SELECT * FROM pendingclients  ";
+                    $query = "SELECT * FROM clients where status = 'pending'";
                     $result = mysqli_query($link, $query);
 
                     echo "<table class='table'>
@@ -90,14 +90,14 @@
 
                     while ($row = mysqli_fetch_array($result)) {
                         echo "<tr>";
-                        echo "<td>" . $row['pending_id'] . "</td>";
+                        echo "<td>" . $row['client_id'] . "</td>";
                         echo "<td>" . $row['first_name'] . "</td>";
                         echo "<td>" . $row['last_name'] . "</td>";
                         echo "<td>" . $row['username'] . "</td>";
-                        echo "<td>" . $row['bday'] . "</td>";
+                        echo "<td>" . $row['birthday'] . "</td>";
                         echo "<td>" . $row['address'] . "</td>";
-                        echo "<td><form action='../dbOperations/addUser.php' method='post'><input type='hidden' name='name' value='", $row['pending_id'], "'><input class='btn btn-primary btn-sm' type='submit' name='submit' value='Grant'></form>
-                              <form action='../dbOperations/RemoveRequest.php' method='post'><input type='hidden' name='name' value='", $row['pending_id'], "'><input class='btn btn-primary btn-sm' type='submit' name='submit' value='Remove'></form></td>";
+                        echo "<td><form action='../dbOperations/addUser.php' method='post'><input type='hidden' name='client_id' value='", $row['client_id'], "'><input class='btn btn-primary btn-sm' type='submit' name='submit' value='Grant'></form>
+                              <form action='../dbOperations/RemoveRequest.php' method='post'><input type='hidden' name='client_id' value='", $row['client_id'], "'><input class='btn btn-primary btn-sm' type='submit' name='submit' value='Remove'></form></td>";
 
 
                     }

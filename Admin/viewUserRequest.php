@@ -80,15 +80,15 @@
 
                         $counter = 0;
 
-                        $result = mysqli_query($con, "SELECT * FROM UserRequest");
+                        $result = mysqli_query($con, "SELECT * FROM userrequests");
                         while ($row = mysqli_fetch_array($result)){
                         ?>
                         <tr>
                             <td> <?php echo $row['date']; ?>
                                 <input type="hidden" value="<?php echo $row['date']; ?>" name="date[]">
                             </td>
-                            <td> <?php echo $row['userID']; ?>
-                                <input type="hidden" value="<?php echo $row['userID']; ?>" name="userID[]">
+                            <td> <?php echo $row['user_id']; ?>
+                                <input type="hidden" value="<?php echo $row['user_id']; ?>" name="userID[]">
                             </td>
                             <td> <?php echo $row['name']; ?>
                                 <input type="hidden" value="<?php echo $row['name']; ?>" name="name[]">
@@ -103,8 +103,8 @@
                             </td>
                             <td>
                                 <?php
-                                echo "<a href='dbOperations/changeStatus.php?status=pending&userID=" . $row['userID'] . "' class='btn'>Pending</a>
-       <a href='dbOperations/changeStatus.php?status=done&userID=" . $row['userID'] . "' class='btn'>Done</a>";
+                                echo "<a href='../dbOperations/changeStatus.php?status=pending&reqID=" . $row['request_id'] . "' class='btn'>Pending</a>
+       <a href='../dbOperations/changeStatus.php?status=done&reqID=" . $row['request_id'] . "' class='btn'>Done</a>";
                                 }
                                 ?>
                             </td>
