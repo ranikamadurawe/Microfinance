@@ -29,17 +29,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+            <li class="nav-item">
                     <a class="nav-link" href="rephome.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="viewclients.php">View my Clients</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item ">
                     <a class="nav-link" href="createstakeholder.php">Create Stakeholder <span
-                                class="sr-only">(current)</span></a>
+                                class="sr-only"></span></a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item ">
                     <a class="nav-link" href="viewpdetails.php">View Personal Info <span
                                 class="sr-only">(current)</span></a>
                 </li>

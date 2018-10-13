@@ -30,7 +30,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+            <li class="nav-item">
                     <a class="nav-link" href="clienthome.php">Home</a>
                 </li>
                 <li class="nav-item">
@@ -38,6 +38,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="addUserRequest.php">Add Request</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="viewprofile.php">View my Personal Data</a>
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0" action="../login/logout.php">

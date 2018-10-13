@@ -18,7 +18,11 @@ class Images
         $database = $dataconnect->connect();
         if (isset($_SESSION['client'])){
             $id = $_SESSION['client']->getId();
-        } else {
+        }else if (isset($_SESSION['rep'])){
+            $id = $_SESSION['rep']->getRepId();
+        }else if (isset($_SESSION['officer'])){
+            $id = $_SESSION['rep']->getOfficerId();
+        }else {
             $id = $_POST['name'];
         }
 

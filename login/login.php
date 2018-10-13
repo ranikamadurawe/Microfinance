@@ -1,7 +1,7 @@
 <?php
 include('../dbOperations/dbconnect.php');
 include_once '../dbOperations/session.php';
-print_r($_SESSION);
+
 
 
 if (!array_key_exists("loginalertmsg", $_SESSION)) {

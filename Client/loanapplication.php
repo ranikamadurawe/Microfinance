@@ -33,14 +33,17 @@ include_once '../login/loginfirst.php';
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+            <li class="nav-item">
                     <a class="nav-link" href="clienthome.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="viewprofile.php">View Personal Data</a>
+                    <a class="nav-link" href="loanapplication.php">Apply for loan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="addUserRequest.php">Add Request</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="viewprofile.php">View my Personal Data</a>
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0" action="../login/logout.php">
@@ -54,7 +57,42 @@ include_once '../login/loginfirst.php';
     <div style="margin-top:100px;">
 
     </div>
-    <h1>Welcome Client</h1>
+    <div class="container">
+    <h1>Apply for Loan</h1>
+
+      <div class="row">
+      <form  method ='POST' action="../dbOperations/loanApplication.inc.php">
+      <p>Please fill in this form to apply for loan</p>
+      <div class="mb-6">
+      <label for="loan_amount"><b>loan amount</b></label><br>
+      <input class="form-control" type="number" placeholder="Enter loan amount" name="loan_amount" required>
+      </div>
+      
+
+       <div class="mb-6">
+              <label for="interest_rate"><b>Interest_rate</b></label><br>
+      <input class="form-control" disabled type="number" name="interest_rate" value=12.5>
+      </div>
+
+
+              <div class="mb-6">
+              <label for="duration"> <b>Duration</b></label><br>
+      <input class="form-control" type="number" name="duration" required><br> 
+      </div>
+
+
+              <div class="mb-6">
+              <label for="start_date"> <b>Start date</b></label><br>
+      <input class="form-control" type="date" placeholder="Enter start date of the loan" name="start_date" min="2018-01-01" max="2035-12-31" required><br> 
+      </div>
+ 
+      <button class="btn btn-primary" name= "submit" type="submit">Submit Application</button>
+      </form>
+      </div>
+    </div>
+    
+      
+      
     <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
         <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>

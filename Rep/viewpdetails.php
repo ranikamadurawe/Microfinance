@@ -29,15 +29,20 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="rephome.php">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="createstakeholder.php">Create new client</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="viewclients.php">View Clients</a>
-          </li>
+        <li class="nav-item">
+                    <a class="nav-link" href="rephome.php">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="viewclients.php">View my Clients</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="createstakeholder.php">Create Stakeholder <span
+                                class="sr-only"></span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="viewpdetails.php">View Personal Info <span
+                                class="sr-only">(current)</span></a>
+                </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0" action="../login/logout.php">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
