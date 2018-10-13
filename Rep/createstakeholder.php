@@ -133,8 +133,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="address2">Phone</label>
-                        <input type="date" class="form-control" id="bdate" name="bday" placeholder="Valid birthday">
+                        <label for="address2">Birthday</label>
+                        <input type="date" required class="form-control" id="bdate" name="bday" placeholder="Valid birthday">
                         <div class="invalid-feedback">
                             Please enter a valid day
                         </div>

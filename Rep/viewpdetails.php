@@ -8,8 +8,8 @@
     <link rel="icon" href="../../../../favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           <link href="../css/custom.css" rel="stylesheet">
-
-    <title>Profile</title>
+    
+    <title>View my Profile</title>
     <?php
     require_once '../Classes/rep.php';
     require_once '../dbOperations/dbconnect.php';
@@ -55,7 +55,8 @@
 
 <main role="main">
 
-
+    <div style="height:75px;">
+</div>
     <div id="content" class="col-lg-10 col-sm-10">
         <h1 align="center"><b>Client Profile</b></h1>
         <div class=" row" align="center">
@@ -63,15 +64,15 @@
             </div>
             <div class="col-md-2" align="right">
 
-                <div>
+                <!--<div>
                     <div class="img" align="left">
                         <?php
-                        $display = new Images('client');
-                        $display->display();
+                        //$display = new Images('client');
+                        //$display->display();
                         ?>
 
                     </div>
-                </div>
+                </div>-->
 
 
             </div>

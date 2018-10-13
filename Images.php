@@ -25,7 +25,7 @@ class Images
         }else if (isset($_SESSION['rep'])){
             $id = $_SESSION['rep']->getRepId();
         }else if (isset($_SESSION['officer'])){
-            $id = $_SESSION['rep']->getOfficerId();
+            $id = $_SESSION['officer']->getOfficerId();
         }else {
             $id = $_POST['name'];
         }
