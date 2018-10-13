@@ -95,7 +95,7 @@ include_once '../login/loginfirst.php';
         class="close" title="Close Modal">&times;</span>
 
                         <!-- Modal Content -->
-                        <form action=dbchangeprofilepic.php method="POST" enctype="multipart/form-data"
+                        <form action=../dbOperations/dbchangeprofilepic.php method="POST" enctype="multipart/form-data"
                               class="modal-content animate">
                             <h1>Change Profile Photo</h1>
                             <div class="imgcontainer">

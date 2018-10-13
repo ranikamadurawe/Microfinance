@@ -1,24 +1,5 @@
-Admin
-
-admin Home
-add revoke accounts
-create new employees
-
-Clients
-
-clienthome
-loanApplication
-
-Manager
-
-managerhome
-
-
-Officer
-
-officerhome
-
-Manager/Officer
-
-viewloandetails
-viewloanrequests
+manager / admin database
+going without login
+wrong urls
+filling database
+5 home pages

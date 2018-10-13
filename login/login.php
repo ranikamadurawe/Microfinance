@@ -52,7 +52,7 @@ if (array_key_exists('characterid', $_SESSION)) {
 
 
 <form class="form-signin" action="loginfun.php" method="post">
-    <img class="mb-4" src="assets/image/users.jpg" alt="" width="72" height="72">
+    <img class="mb-4" src="../img/logo.png" alt="" width="72" height="72">
 
     <!-- https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg  -->
 

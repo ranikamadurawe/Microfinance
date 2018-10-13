@@ -73,7 +73,7 @@ include_once '../login/loginfirst.php';
 
        <div class="mb-6">
               <label for="interest_rate"><b>Interest_rate</b></label><br>
-      <input class="form-control" disabled type="number" name="interest_rate" value=12.5>
+      <input class="form-control" disabled type="number" name="interest_rate" value=12.50>
       </div>
 
 

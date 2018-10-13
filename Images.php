@@ -45,16 +45,14 @@ class Images
     {
         $dataconnect = new DbConnect();
         $database = $dataconnect->connect();
-        session_start();
-        $body = "" . $_SESSION['teacher'] . " have updated profile Picture";
+        $id = $_SESSION['client']->getId();
+        echo $id;
 
-        $querynotify = "INSERT INTO notification VALUES ('','{$body}','{$_SESSION['teacher']}',0,0,1)";
-        $query = "UPDATE teacher SET photo=('$image') where nic='{$_SESSION['nic']}'";
+        $query = "UPDATE clients SET photo=('$image') where client_id = $id";
         $result = mysqli_query($database, $query);
 
         if ($result) {
             echo "<script type='text/javascript'>alert('Details Succesfully Updated')</script>";
-            mysqli_query($database, $querynotify);
 
         } else {
             echo "<script type='text/javascript'>alert('Erroe Occured...Please retry!!!!')</script>";

@@ -1,8 +1,8 @@
 <?php
 
 		
-		require 'images.php';
-		$display = new Images(`teachers`);
+		require '../Images.php';
+		$display = new Images(`clients`);
 		
 		
 		$databasecon= new DbConnect();
@@ -22,6 +22,7 @@
 			echo "<script type='text/javascript'>alert('Pleace select an Image')</script>";
 		}
 		
+		//header('Location: ../Client/editprofile.php ');
 		?>
 			<script type=text/javascript>
 			window.location='editprofile.php';
