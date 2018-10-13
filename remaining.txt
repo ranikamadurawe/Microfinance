@@ -1,5 +1,4 @@
 admin database
-going without login
 wrong urls
 filling database
 5 home pages
