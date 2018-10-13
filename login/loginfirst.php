@@ -11,6 +11,6 @@ if (!array_key_exists("user_login_status",$_SESSION)) {
 
 if($_SESSION['user_login_status'] != "alreadylogedin"){
 	$_SESSION['loginalertmsg'] = 'Please Login First';
-	header("Location: index.php"); die();
+	header("Location: ../index.php"); die();
 }
 ?>

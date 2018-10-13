@@ -37,18 +37,18 @@ include_once '../login/loginfirst.php';
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="clienthome.php">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="loanapplication.php">Apply for loan</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="addUserRequest.php">Add Request</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="viewprofile.php">View my Personal Data</a>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="clienthome.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="loanapplication.php">Apply for loan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="addUserRequest.php">Add Request</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="viewprofile.php">View my Personal Data</a>
+                </li>
             </ul>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
         </div>

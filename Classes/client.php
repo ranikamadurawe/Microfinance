@@ -14,7 +14,7 @@ class client
         global $pdo;
         $stmt = $pdo->prepare("SELECT * FROM clients WHERE client_id=:id");
         $stmt->execute(array(
-            'id'=>$id
+            'id' => $id
         ));
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 

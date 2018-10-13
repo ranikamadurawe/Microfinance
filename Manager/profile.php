@@ -33,14 +33,16 @@
                     <a class="nav-link" href="managerhome.php">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="viewloanrequests.php">View Loan Requests <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="viewloanrequests.php">View Loan Requests <span
+                                class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="viewpdetails.php">View Personal Info <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="viewpdetails.php">View Personal Info <span
+                                class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0" action="../logout.php">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
             </form>
         </div>
     </nav>
@@ -74,7 +76,7 @@
             <div class="col-lg-10" align="left">
                 <?php
 
-                $provided_sname = trim( $_GET['client_id'] );
+                $provided_sname = trim($_GET['client_id']);
 
                 $dataconnect = new DbConnect();
                 $link = $dataconnect->connect();
@@ -122,25 +124,24 @@
                 ?>
                 <h2>Loan Status</h2>
 
-                  <?php
-                  require_once '../dbOperations/dbconnect.php';
+                <?php
+                require_once '../dbOperations/dbconnect.php';
 
-                  $dataconnect = new DbConnect();
-                  $database = $dataconnect->connect();
+                $dataconnect = new DbConnect();
+                $database = $dataconnect->connect();
 
-                  //$uid = $_SESSION['uid'];
-
-
-                  if (mysqli_connect_errno())
-                  {
-                  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                  }
-
-                  //rep_id=3 use $uid;
-                  $result2 = mysqli_query($database,"SELECT * FROM loanapplications WHERE client_id=$provided_sname");
+                //$uid = $_SESSION['uid'];
 
 
-                  echo "<table class='table'>
+                if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                }
+
+                //rep_id=3 use $uid;
+                $result2 = mysqli_query($database, "SELECT * FROM loanapplications WHERE client_id=$provided_sname");
+
+
+                echo "<table class='table'>
                   <thead>
                   <tr>
                   <th>Client id</th>
@@ -153,21 +154,20 @@
                   </thead>
                   <tbody>";
 
-                  while($row = mysqli_fetch_array($result2))
-                  {
-                  echo "<tr>";
-                  echo "<td>" . $row['client_id'] . "</td>";
-                  echo "<td>" . $row['loan_amount'] . "</td>";
-                  echo "<td>" . $row['interest_rate'] . "</td>";
-                  echo "<td>" . $row['duration'] . "</td>";
-                  echo "<td>" . $row['start_date'] . "</td>";
-                  echo "<td>" . $row['approved'] . "</td>";
-                  echo "</tr>";
-                  }
-                  echo "</tbody></table>";
+                while ($row = mysqli_fetch_array($result2)) {
+                    echo "<tr>";
+                    echo "<td>" . $row['client_id'] . "</td>";
+                    echo "<td>" . $row['loan_amount'] . "</td>";
+                    echo "<td>" . $row['interest_rate'] . "</td>";
+                    echo "<td>" . $row['duration'] . "</td>";
+                    echo "<td>" . $row['start_date'] . "</td>";
+                    echo "<td>" . $row['approved'] . "</td>";
+                    echo "</tr>";
+                }
+                echo "</tbody></table>";
 
-                  mysqli_close($con);
-                  ?>
+                mysqli_close($con);
+                ?>
 
             </div>
 

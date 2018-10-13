@@ -10,7 +10,7 @@ class rep
         global $pdo;
         $stmt = $pdo->prepare("SELECT * FROM representatives WHERE rep_id=:id");
         $stmt->execute(array(
-            'id'=>$id
+            'id' => $id
         ));
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
