@@ -15,7 +15,7 @@ $provided_bday = trim($_POST['bday']);
 $rep_id = $_SESSION['rep']->getRepId();
 $connection = mysqli_connect("localhost", "root", "", "microfinance");
 $query = "INSERT INTO clients (`rep_id`, `birthday`, `username`, `first_name`, `last_name`, `email`, `tele_phone`, `address`, `gender`, `nic`) 
-VALUES ('$rep_id', '$provided_bday', '$provided_uname', '$provided_fname', '$provided_lname', '$provided_email', '$provided_phone', '$provided_address','$provided_gender', '$provided_nic')";
+VALUES ('$rep_id', '$provided_bday', '$provided_uname', '$provided_fname', '$provided_lname', '$provided_email', '$provided_phone', '$provided_address','$provided_gender', '$provided_nic', 'pending')";
 
 $result = mysqli_query($connection, $query);
 

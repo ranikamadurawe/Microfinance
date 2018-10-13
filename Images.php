@@ -16,7 +16,11 @@ class Images
     {
         $dataconnect = new DbConnect();
         $database = $dataconnect->connect();
-        if (isset($_SESSION['client'])){
+        if( isset($_GET['client_id'])){
+            $id = trim($_GET['client_id']);
+        }else if( isset($_POST['name'])){
+            $id = trim($_POST['name']);
+        }else if (isset($_SESSION['client'])){
             $id = $_SESSION['client']->getId();
         }else if (isset($_SESSION['rep'])){
             $id = $_SESSION['rep']->getRepId();
