@@ -20,36 +20,21 @@
   </head>
   <body>
 
-    <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Microfinance</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">View my Details</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Apply for Loan</a>
-            </li>
-          </ul>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
-        </div>
-      </nav>
-    </header>
+    
     <main role="main">
 
+        <div class="py-5 text-center" >
+        <h1>Your first login Please change your password</h1>
+        </div>
 
+      
 
 
       <form method="post" novalidate class="form-password" action="dbOperations/changepassword.php">
-        <h1 class="h3 mb-3 font-weight-normal">New password form</h1>
-        <div >
+        <div  class="py-5 text-center"><h2 class="h3 mb-3 font-weight-normal">New password form</h2></div>
+
+        
+        <div  >
           <label for="inputEmail" class="sr-only">New Password</label>
           <input type="password" id="inputpassword" class="form-control" name="inputpassword" placeholder="Password" required autofocus>
           <div class="invalid-feedback">
