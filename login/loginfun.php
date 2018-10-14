@@ -31,21 +31,46 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
         if ($character == 'Client') {
             $_SESSION['type'] = 'client';
             $_SESSION['client'] = new client($obj->userid);
-            header("Location: ../Client/clienthome.php"); #client
+            if (($obj->initial_login) == 0){
+                header("Location: ../login/newpassword.php");
+            } else {
+                header("Location: ../Client/clienthome.php");
+            }
+
         } else if ($character == 'Representative') {
             $_SESSION['type'] = 'rep';
             $_SESSION['rep'] = new rep($obj->userid);
-            header("Location: ../Rep/rephome.php"); #representaive
+            if (($obj->initial_login) == 0){
+                header("Location: ../login/newpassword.php");
+            } else {
+                header("Location: ../Rep/rephome.php"); #representaive
+            }
+
         } else if ($character == 'Officer') {
             $_SESSION['type'] = 'officer';
             $_SESSION['officer'] = new officer($obj->userid);
-            header("Location: ../Officer/officerhome.php"); #officer
+            if (($obj->initial_login) == 0){
+                header("Location: ../login/newpassword.php");
+            } else {
+                header("Location: ../Officer/officerhome.php"); #officer
+            }
+
         } else if ($character == 'Manager') {
             $_SESSION['type'] = 'manager';
             $_SESSION['manager'] = new manager($obj->userid);
-            header("Location: ../Manager/managerhome.php"); #manager
+            if (($obj->initial_login) == 0){
+                header("Location: ../login/newpassword.php");
+            } else {
+                header("Location: ../Manager/managerhome.php"); #manager
+            }
+
         } else if ($character == 'Admin') {
-            header("Location: ../Admin/adminhome.php"); #admin
+            if (($obj->initial_login) == 0){
+                header("Location: ../login/newpassword.php");
+            } else {
+                header("Location: ../Admin/adminhome.php"); #admin
+            }
+
         }
     } else {
         $_SESSION['loginalertmsg'] = 'Password or Username is Incorrect';
