@@ -70,7 +70,7 @@
 		$query = "SELECT `client_id`, `loan_id`, CONCAT(`first_name`, ' ', `last_name`), `approved`".
 				"FROM `clients` NATURAL JOIN `loanapplications`";
 	}
-		$dbconn = mysqli_connect("localhost", "madnisal", "password", "my_db");
+		$dbconn = mysqli_connect("localhost", "jester","mafia","microfinance");
 		$result = mysqli_query($dbconn, $query);
 		mysqli_close($dbconn);
 		if($result){
