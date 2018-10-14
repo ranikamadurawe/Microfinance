@@ -1,4 +1,3 @@
 admin database
-wrong urls
+wrong urls page done (need to link)
 filling database
-5 home pages
