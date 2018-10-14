@@ -78,6 +78,8 @@
                         "WHERE `loan_id` = '$loan_id' " .
                         "LIMIT 1";
                     $aproval_status = "approved";
+                    file_put_contents('/var/www/html/god.txt', "approveranch".PHP_EOL, FILE_APPEND);
+                    file_put_contents('/var/www/html/god.txt',  $query.PHP_EOL, FILE_APPEND);
                 } else if (isset($_GET['reject'])) {
                     $query = "UPDATE `loanapplications`" .
                         "SET `approved` = 'rejected'" .
