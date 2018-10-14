@@ -11,6 +11,7 @@ require_once '../login/checklogin.php';
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
+    
 
     <title>Loan Applcation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -213,6 +214,8 @@ require_once '../login/checklogin.php';
 
 </footer>
 </main>
+<script src="../js/vendor/jquery/jquery.min.js"></script>
+    <script src="../js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

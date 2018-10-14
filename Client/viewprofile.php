@@ -318,6 +318,8 @@
 <script src="../../assets/js/vendor/popper.min.js"></script>
 <script src="../../dist/js/bootstrap.min.js"></script>
 <script src="../../assets/js/vendor/holder.min.js"></script>
+<script src="../js/vendor/jquery/jquery.min.js"></script>
+    <script src="../js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function () {
