@@ -131,7 +131,7 @@ require_once '../login/checklogin.php';
             mysqli_close($dbconn);
             if ($result) {
                 echo '<table class="table">' .
-                    '<tr><th>Client ID</th><th>Loan ID</th><th>Name</th><th>Approve</th></tr>';
+                    '<tr><th>Client ID</th><th>Loan ID</th><th>Name</th><th>Status</th><th>Action</th></tr>';
 
                 while ($customer = mysqli_fetch_row($result)) {
                     $status = $customer[3];
@@ -140,13 +140,13 @@ require_once '../login/checklogin.php';
                         . '<td width="auto"><a class="_button" href="profile.php?client_id=' . $customer[0] . '">' . $customer[0] . '</a></td>'
                         . '<td width="auto""><a class="_button" href="viewloandetails.php?loan_id=' . $customer[1] . '">' . $customer[1] . '</a></td>'
                         . '<td width="auto"">' . $customer[2] . '</td>'
+                        . '<td width="auto"">' . $status . '</td>'
                         . '<td align="center">';
                     if ($status == 'pending') {
                         echo '<a class="_button" href="?loan_id=' . $customer[1] . '&approve=#">Approve</a></br>'
                             . '<a class="_button" href="?loan_id=' . $customer[1] . '&reject=#">Reject</a>';
                     } else {
-                        $text = $customer[3];
-                        echo $text . '</br><a class="_button" href="?loan_id=' . $customer[1] . '&reset=#">Reset</a>';
+                        echo '</br><a class="_button" href="?loan_id=' . $customer[1] . '&reset=#">Reset</a>';
                     }
                     echo '</td>'
                         . '</tr>';

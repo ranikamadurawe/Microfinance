@@ -54,7 +54,7 @@
     <div style="margin-top:100px;">
 
     </div>
-    <h1>Welcome Loan Requests</h1>
+    <h1>Loan Requests</h1>
     <div id="loan_list">
         <?php
         require_once '../login/checklogin.php';
@@ -76,7 +76,7 @@
                         "SET `approved` = 'approved'" .
                         "WHERE `loan_id` = '$loan_id' " .
                         "LIMIT 1";
-                    $aproval_status = "aproved";
+                    $aproval_status = "approved";
                 } else if (isset($_GET['reject'])) {
                     $query = "UPDATE `loanapplications`" .
                         "SET `approved` = 'rejected'" .
@@ -89,6 +89,12 @@
                         "WHERE `loan_id` = '$loan_id' " .
                         "LIMIT 1";
                     $aproval_status = "Reset";
+                }else if (isset($_GET['verify'])){
+                    $query = "UPDATE `loanapplications`" .
+                    "SET `approved` = 'verified' " .
+                    "WHERE `loan_id` = '$loan_id' " .
+                    "LIMIT 1";
+                $aproval_status = "Verified";
                 }
                 $result = mysqli_query($dbconn, $query);
                 mysqli_close($dbconn);
@@ -128,7 +134,7 @@
             mysqli_close($dbconn);
             if ($result) {
                 echo '<table class="table">' .
-                    '<tr><th>Client ID</th><th>Loan ID</th><th>Name</th></tr>';
+                    '<tr><th>Client ID</th><th>Loan ID</th><th>Name</th><th>Current Status</th><th>Action</th></tr>';
 
                 while ($customer = mysqli_fetch_row($result)) {
                     $status = $customer[3];
@@ -137,13 +143,14 @@
                         . '<td width="auto"><a class="_button" href="profile.php?client_id=' . $customer[0] . '">' . $customer[0] . '</a></td>'
                         . '<td width="auto""><a class="_button" href="viewloandetails.php?loan_id=' . $customer[1] . '">' . $customer[1] . '</a></td>'
                         . '<td width="auto"">' . $customer[2] . '</td>'
+                        . '<td width="auto"">' . $status . '</td>'
                         . '<td align="center">';
-                    if ($status == 'pending') {
-                        echo '<a class="_button" href="?loan_id=' . $customer[1] . '&approve=#">Approve</a></br>'
-                            . '<a class="_button" href="?loan_id=' . $customer[1] . '&reject=#">Reject</a>';
+                    if ($status == 'rejected' or $status == 'approved'){
+                        echo 'loan has been processed by manager';
+                    }else if ($status == 'pending') {
+                        echo '<a class="_button" href="?loan_id=' . $customer[1] . '&verify=#">Verify</a></br>';
                     } else {
-                        $text = $customer[3];
-                        echo $text . '</br><a class="_button" href="?loan_id=' . $customer[1] . '&reset=#">Reset</a>';
+                        echo '</br><a class="_button" href="?loan_id=' . $customer[1] . '&reset=#">Reset</a>';
                     }
                     echo '</td>'
                         . '</tr>';
