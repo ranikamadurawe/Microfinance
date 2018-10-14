@@ -60,7 +60,7 @@
         require_once '../login/checklogin.php';
         if (isset($_GET['loan_id']) && !empty($_GET['loan_id'])) {
             $loan_id = $_GET['loan_id'];
-            file_put_contents('/var/www/html/god.txt', 'your_content'.PHP_EOL, FILE_APPEND);
+            file_put_contents('/var/www/html/god.txt', "------------------".PHP_EOL, FILE_APPEND);
             $query = "SELECT `client_id`, CONCAT(`first_name`, ' ', `last_name`), `approved`" .
                 "FROM `clients` NATURAL JOIN `loanapplications`" .
                 "WHERE `loan_id` = '$loan_id' " .
@@ -97,6 +97,9 @@
                     "LIMIT 1";
                 $aproval_status = "Verified";
                 }
+                
+                file_put_contents('/var/www/html/god.txt', "setv".isset($_GET['verify']).PHP_EOL, FILE_APPEND);
+                file_put_contents('/var/www/html/god.txt', "setv".isset($_GET['loan_id']).PHP_EOL, FILE_APPEND);
                 $result = mysqli_query($dbconn, $query);
                 mysqli_close($dbconn);
                 if ($result) {
