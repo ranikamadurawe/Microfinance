@@ -52,23 +52,22 @@ require_once '../login/checklogin.php';
                     <a class="nav-link" href="viewprofile.php">View my Personal Data</a>
                 </li>
             </ul>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+            <form class="form-inline mt-2 mt-md-0" action="../login/logout.php">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+            </form>
         </div>
     </nav>
 </header>
 
 <main role="main">
-    <div style="margin-top:100px;">
+<div style="margin-top:100px;">
 
-    </div>
-
-    <div class="ch-container">
-        <div class="row">
-
-
-            <div id="content" class="col-lg-10 col-sm-10">
+</div>
+<div id="content" class="col-lg-10 col-sm-10">
                 <h1 align="center"><b>Edit Profile</b></h1>
-                <div class=" row" align="center">
+                
+        <div class="container">
+        <div class=" row" align="center">
                     <div class="col-md-8">
                     </div>
                     <div class="col-md-2" align="right">
@@ -235,11 +234,13 @@ require_once '../login/checklogin.php';
 
             </div>
         </div>
+    </div>
+
+ 
 
 <div style="height:50px">
 </div>
-
-      <footer class="page-footer font-small mdb-color lighten-3 pt-4">
+<footer class="page-footer font-small mdb-color lighten-3 pt-4">
 
 <!-- Footer Links -->
 <div class="container text-center text-md-left">
@@ -352,7 +353,9 @@ require_once '../login/checklogin.php';
 <!-- Copyright -->
 
 </footer>
+
 </main>
+    
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -394,20 +397,3 @@ require_once '../login/checklogin.php';
 </body>
 </html>
 
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>EDIT PROFILE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The styles -->
-
-
-</head>
-
-<body>
-
-
-</body>
-</html>
