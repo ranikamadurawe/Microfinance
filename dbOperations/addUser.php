@@ -3,7 +3,7 @@
 $provided_id = ($_POST['client_id']);
 echo $provided_id;
 
-$connection = mysqli_connect("localhost", "root", "", "microfinance");
+$connection = mysqli_connect("localhost", "jester","mafia","microfinance");
 
 $query = "UPDATE clients set status ='created' WHERE clients.client_id = '$provided_id'";
 $result = mysqli_query($connection, $query);
