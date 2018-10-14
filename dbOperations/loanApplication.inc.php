@@ -2,7 +2,7 @@
 require_once '../Classes/client.php';
 require_once '../dbOperations/session.php';
 
-$conn = mysqli_connect('localhost', 'root', '', 'microfinance');
+$conn = mysqli_connect("localhost", "jester","mafia","microfinance");
 $client_id=$_SESSION['client']->getId();
 $loan_amount=trim($_POST['loan_amount']);
 $duration=trim($_POST['duration']);
