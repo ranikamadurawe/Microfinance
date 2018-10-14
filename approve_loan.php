@@ -8,7 +8,7 @@
 				"WHERE `loan_id` = '$loan_id' ".
 				"LIMIT 1";
 
-		$dbconn = mysqli_connect("localhost", "madnisal", "password", "my_db");
+		$dbconn = mysqli_connect("localhost", "jester","mafia","microfinance");
 		$result = mysqli_fetch_row(mysqli_query($dbconn, $query));
 		if($result){
 			$customer_id = $result[0];
