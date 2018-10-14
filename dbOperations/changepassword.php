@@ -11,7 +11,7 @@
 
     $connection = mysqli_connect("localhost", "root", "", "microfinance");
     $username = $_SESSION['username'];
-    $query = "UPDATE loginuser SET password = '$newpassword', initial_login = X'01' WHERE username='$username'"; 
+    $query = "UPDATE loginuser SET password = '$newpassword', initial_login = '1' WHERE username='$username'";
     $result = mysqli_query($connection,$query); 
 
     if($_SESSION['type']=='client'){

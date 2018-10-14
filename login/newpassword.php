@@ -16,7 +16,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="css/view.css" rel="stylesheet">
+    <link href="../css/view.css" rel="stylesheet">
   </head>
   <body>
 
@@ -30,7 +30,7 @@
       
 
 
-      <form method="post" novalidate class="form-password" action="dbOperations/changepassword.php">
+      <form method="post" novalidate class="form-password" action="../dbOperations/changepassword.php">
         <div  class="py-5 text-center"><h2 class="h3 mb-3 font-weight-normal">New password form</h2></div>
 
         
