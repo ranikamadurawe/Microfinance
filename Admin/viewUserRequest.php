@@ -76,8 +76,8 @@
                         <?php
                         require_once '../login/checklogin.php';
                         $servername = "localhost";
-                        $username = "root";
-                        $password = "";
+                        $username = "jester";
+                        $password = "mafia";
                         $dbname = "microfinance";
 
                         // Create connection

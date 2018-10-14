@@ -1,7 +1,7 @@
 <?php
 
 require 'dbconnect.php';
-require '../images.php';
+require '../Images.php';
 $display = new Images('teacher');
 
 print_r($_SESSION);
