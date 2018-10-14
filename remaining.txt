@@ -1,3 +1,39 @@
 admin database
 wrong urls page done (need to link)
-filling database
+documentation
+
+
+note areas that use localhost direct to link mysql
+---------------------------------------------------
+dbOperations->
+                adduser
+                changepassword
+                config2
+                createemployee
+                createstake
+                loanapplication
+                pdo
+                removerequest
+
+manager ->
+                viewloandetails
+                viewloanrequest (2 places)
+
+officer ->
+                viewloandetails
+                viewloanrequest (2 places)
+
+rep -> (x)
+
+client -> (x)
+
+classes -> (x)
+
+login -> (x)
+
+admin ->
+                viewuserrequest
+
+change above + dbConnection to appropriate host
+
+
