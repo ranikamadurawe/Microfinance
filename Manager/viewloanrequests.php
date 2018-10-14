@@ -68,7 +68,7 @@ require_once '../login/checklogin.php';
                 "WHERE `loan_id` = '$loan_id' " .
                 "LIMIT 1";
 
-            $dbconn = mysqli_connect("localhost", "root", "", "microfinance");
+            $dbconn = mysqli_connect("localhost", "jester","mafia","microfinance");
             $result = mysqli_fetch_row(mysqli_query($dbconn, $query));
             if ($result) {
                 $customer_id = $result[0];
@@ -126,7 +126,7 @@ require_once '../login/checklogin.php';
                 $query = "SELECT `client_id`, `loan_id`, CONCAT(`first_name`, ' ', `last_name`), `approved`" .
                     "FROM `clients` NATURAL JOIN `loanapplications`";
             }
-            $dbconn = mysqli_connect("localhost", "root", "", "microfinance");
+            $dbconn = mysqli_connect("localhost", "jester","mafia","microfinance");
             $result = mysqli_query($dbconn, $query);
             mysqli_close($dbconn);
             if ($result) {

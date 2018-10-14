@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2018 at 04:41 PM
+-- Generation Time: Oct 14, 2018 at 01:01 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -95,7 +95,7 @@ CREATE TABLE `loginuser` (
   `client_id` int(10) DEFAULT NULL,
   `username` varchar(20) DEFAULT NULL,
   `password` text,
-  `initial_login` binary(1) DEFAULT NULL,
+  `initial_login` varchar(1) DEFAULT NULL,
   `character_id` enum('Client','Manager','Representative','Officer','Admin') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -104,10 +104,10 @@ CREATE TABLE `loginuser` (
 --
 
 INSERT INTO `loginuser` (`userid`, `client_id`, `username`, `password`, `initial_login`, `character_id`) VALUES
-(1, 1, 'test', 'test123', 0x01, 'Client'),
-(2, NULL, 'rep', 'rep123', 0x01, 'Representative'),
-(3, NULL, 'officer', 'officer123', 0x01, 'Officer'),
-(1, NULL, 'manager', 'manager123', 0x00, 'Manager');
+(1, 1, 'test', 'test123', '1', 'Client'),
+(2, NULL, 'rep', 'rep123', '', 'Representative'),
+(3, NULL, 'officer', 'officer123', '', 'Officer'),
+(1, NULL, 'manager', 'manager', '1', 'Manager');
 
 -- --------------------------------------------------------
 

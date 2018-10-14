@@ -18,7 +18,7 @@ echo $provided_etype;
 
 
 // Login to DB as a Representative
-/*$connection = mysqli_connect("localhost", "root", "", "authentication");
+/*$connection = mysqli_connect("localhost", "jester","mafia","microfinance");
 
 // query
 $result = mysqli_query($connection, $query);
