@@ -9,7 +9,7 @@
         header("Location: ../newpassword.php");
     }
 
-    $connection = mysqli_connect("localhost", "root", "", "microfinance");
+    $connection = mysqli_connect("localhost", "jester","mafia","microfinance");
     $username = $_SESSION['username'];
     $query = "UPDATE loginuser SET password = '$newpassword', initial_login = '1' WHERE username='$username'";
     $result = mysqli_query($connection,$query); 
