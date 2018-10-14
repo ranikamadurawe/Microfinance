@@ -97,11 +97,13 @@
                     "LIMIT 1";
                     $aproval_status = "Verified";                    
                     file_put_contents('/var/www/html/god.txt', "veryfybranch".PHP_EOL, FILE_APPEND);
+                    file_put_contents('/var/www/html/god.txt',  $query.PHP_EOL, FILE_APPEND);
                 }
                 
                 file_put_contents('/var/www/html/god.txt', "setv".isset($_GET['verify']).PHP_EOL, FILE_APPEND);
                 file_put_contents('/var/www/html/god.txt', "lid".isset($_GET['loan_id']).PHP_EOL, FILE_APPEND);
                 $result = mysqli_query($dbconn, $query);
+                file_put_contents('/var/www/html/god.txt',  "res".$result.PHP_EOL, FILE_APPEND);
                 mysqli_close($dbconn);
                 if ($result) {
                     echo "</br>"
