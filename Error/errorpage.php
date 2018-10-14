@@ -10,7 +10,7 @@
     <title>page not found</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="css/Custom.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -34,71 +34,71 @@
               if(isset($_SESSION['type'])){
                 if($_SESSION['type']=='client'){
                   echo ' <li class="nav-item">
-                  <a class="nav-link" href="Client/clienthome.php">Home</a>
+                  <a class="nav-link" href="../Client/clienthome.php">Home</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="Client/loanapplication.php">Apply for loan</a>
+                  <a class="nav-link" href="../Client/loanapplication.php">Apply for loan</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="Client/addUserRequest.php">Add Request</a>
+                  <a class="nav-link" href="../Client/addUserRequest.php">Add Request</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="Client/viewprofile.php">View my Personal Data</a>
+                  <a class="nav-link" href="../Client/viewprofile.php">View my Personal Data</a>
               </li>';
               }else if($_SESSION['type']=='rep'){
                   echo '           <li class="nav-item">
-                  <a class="nav-link" href="Rep/rephome.php">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="../Rep/rephome.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="Rep/viewclients.php">View my Clients</a>
+                  <a class="nav-link" href="../Rep/viewclients.php">View my Clients</a>
               </li>
               <li class="nav-item ">
-                  <a class="nav-link" href="Rep/createstakeholder.php">Create Stakeholder <span
+                  <a class="nav-link" href="../Rep/createstakeholder.php">Create Stakeholder <span
                               class="sr-only"></span></a>
               </li>
               <li class="nav-item ">
-                  <a class="nav-link" href="Rep/viewpdetails.php">View Personal Info <span
+                  <a class="nav-link" href="../Rep/viewpdetails.php">View Personal Info <span
                               class="sr-only">(current)</span></a>
               </li>';
               }else if($_SESSION['type']=='officer'){
                   echo '           <li class="nav-item">
-                  <a class="nav-link" href="Officer/officerhome.php">Home</a>
+                  <a class="nav-link" href="../Officer/officerhome.php">Home</a>
               </li>
               <li class="nav-item ">
-                  <a class="nav-link" href="Officer/viewloanrequests.php">View Loan Requests <span
+                  <a class="nav-link" href="../Officer/viewloanrequests.php">View Loan Requests <span
                               class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item ">
-                  <a class="nav-link" href="Officer/viewpdetails.php">View Personal Info <span
+                  <a class="nav-link" href="../Officer/viewpdetails.php">View Personal Info <span
                               class="sr-only">(current)</span></a>
               </li>';
               }else if($_SESSION['type']=='manager'){ 
                   echo ' <li class="nav-item">
-                  <a class="nav-link" href="Manager/managerhome.php">Home</a>
+                  <a class="nav-link" href="../Manager/managerhome.php">Home</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="Manager/viewloanrequests.php">View Loan Requests <span
+                  <a class="nav-link" href="../Manager/viewloanrequests.php">View Loan Requests <span
                               class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="Manager/viewpdetails.php">View Personal Info <span
+                  <a class="nav-link" href="../Manager/viewpdetails.php">View Personal Info <span
                               class="sr-only">(current)</span></a>
               </li>';
               }else if($_SESSION['type']=='admin'){
                   echo '                <li class="nav-item">
-                  <a class="nav-link" href="Admin/adminhome.php">Home</a>
+                  <a class="nav-link" href="../Admin/adminhome.php">Home</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="Admin/araccounts.php">Accept Revoke Accounts</a>
+                  <a class="nav-link" href="../Admin/araccounts.php">Accept Revoke Accounts</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="Admin/viewdetails.php">View Personal Info</a>
+                  <a class="nav-link" href="../Admin/viewdetails.php">View Personal Info</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="Admin/viewUserRequest.php">View User Requests</a>
+                  <a class="nav-link" href="../Admin/viewUserRequest.php">View User Requests</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="Admin/newemployee.php">Create New Employee</a>
+                  <a class="nav-link" href="../Admin/newemployee.php">Create New Employee</a>
               </li>';
               }
               }else{
@@ -122,11 +122,11 @@
         </ul>
         <?php
           if(isset($_SESSION)){
-            echo '            <form class="form-inline mt-2 mt-md-0" action="login/logout.php">
+            echo '            <form class="form-inline mt-2 mt-md-0" action="../login/logout.php">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
         </form>';
           }else{
-            echo '          <form class="form-inline mt-2 mt-md-0" action="login/login.php">
+            echo '          <form class="form-inline mt-2 mt-md-0" action="../login/login.php">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
           </form>';
           }
@@ -142,18 +142,18 @@
             <?php
               if(isset($_SESSION['type'])){
                 if($_SESSION['type']=='client'){
-                  echo '<center><a class="btn btn-primary btn-lg" href="Client/clienthome.php" role="button">Home</a>';
+                  echo '<center><a class="btn btn-primary btn-lg" href="../Client/clienthome.php" role="button">Home</a>';
                 }else if($_SESSION['type']=='rep'){
-                  echo '<center><a class="btn btn-primary btn-lg" href="Rep/rephome.php" role="button">Home</a>';
+                  echo '<center><a class="btn btn-primary btn-lg" href="../Rep/rephome.php" role="button">Home</a>';
                 }else if($_SESSION['type']=='officer'){
-                  echo '<center><a class="btn btn-primary btn-lg" href="Officer/officerhome.php" role="button">Home</a>';
+                  echo '<center><a class="btn btn-primary btn-lg" href="../Officer/officerhome.php" role="button">Home</a>';
                 }else if($_SESSION['type']=='manager'){ 
-                  echo '<center><a class="btn btn-primary btn-lg" href="Manager/managerhome.php" role="button">Home</a>';
+                  echo '<center><a class="btn btn-primary btn-lg" href="../Manager/managerhome.php" role="button">Home</a>';
                 }else if($_SESSION['type']=='admin'){
-                  echo '<center><a class="btn btn-primary btn-lg" href="Admin/adminhome.php" role="button">Home</a>';
+                  echo '<center><a class="btn btn-primary btn-lg" href="../Admin/adminhome.php" role="button">Home</a>';
                 }
               }else{
-                echo '<center><a class="btn btn-primary btn-lg" href="index.php" role="button">Home</a>';
+                echo '<center><a class="btn btn-primary btn-lg" href="../index.php" role="button">Home</a>';
               }
             ?>
 
@@ -284,7 +284,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="js/vendor/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="js/vendor/holder.min.js"></script>
   </body>
