@@ -95,11 +95,12 @@
                     "SET `approved` = 'verified' " .
                     "WHERE `loan_id` = '$loan_id' " .
                     "LIMIT 1";
-                $aproval_status = "Verified";
+                    $aproval_status = "Verified";                    
+                    file_put_contents('/var/www/html/god.txt', "veryfybranch".PHP_EOL, FILE_APPEND);
                 }
                 
                 file_put_contents('/var/www/html/god.txt', "setv".isset($_GET['verify']).PHP_EOL, FILE_APPEND);
-                file_put_contents('/var/www/html/god.txt', "setv".isset($_GET['loan_id']).PHP_EOL, FILE_APPEND);
+                file_put_contents('/var/www/html/god.txt', "lid".isset($_GET['loan_id']).PHP_EOL, FILE_APPEND);
                 $result = mysqli_query($dbconn, $query);
                 mysqli_close($dbconn);
                 if ($result) {
