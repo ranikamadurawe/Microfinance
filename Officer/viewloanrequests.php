@@ -279,7 +279,8 @@
 
 </footer>
 </main>
-
+<script src="../js/vendor/jquery/jquery.min.js"></script>
+    <script src="../js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

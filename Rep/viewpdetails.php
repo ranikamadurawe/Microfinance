@@ -286,5 +286,7 @@
         }, false);
     })();
 </script>
+<script src="../js/vendor/jquery/jquery.min.js"></script>
+    <script src="../js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
