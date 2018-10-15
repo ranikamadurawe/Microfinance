@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 15, 2018 at 08:10 AM
+-- Generation Time: Oct 15, 2018 at 08:35 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -105,7 +105,7 @@ CREATE TABLE `loginuser` (
 --
 
 INSERT INTO `loginuser` (`userid`, `client_id`, `username`, `password`, `initial_login`, `character_id`) VALUES
-(1, 1, 'client', '1', '0', 'Client'),
+(1, 1, 'client', 'client123', '0', 'Client'),
 (2, NULL, 'rep', 'rep123', '0', 'Representative'),
 (3, NULL, 'officer', 'officer123', '1', 'Officer'),
 (1, NULL, 'manager', 'manager123', '1', 'Manager');
