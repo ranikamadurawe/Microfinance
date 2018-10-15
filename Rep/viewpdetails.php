@@ -59,7 +59,7 @@
     <div style="height:75px;">
 </div>
     <div id="content" class="col-lg-10 col-sm-10">
-        <h1 align="center"><b>Client Profile</b></h1>
+        <h1 align="center"><b>Representative Profile</b></h1>
         <div class=" row" align="center">
             <div class="col-md-8">
             </div>
