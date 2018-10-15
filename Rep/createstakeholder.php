@@ -147,10 +147,10 @@ require_once '../login/checklogin.php';
                     <div class="mb-3">
                         <label for="address2">Gender</label>
                         <label class="radio-inline form-control">
-                            <input type="radio" name="gender" value="M" checked>Male
+                            <input type="radio" name="gender" value="Male" checked>Male
                         </label>
                         <label class="radio-inline form-control">
-                            <input type="radio" name="gender" value="F">Female
+                            <input type="radio" name="gender" value="Female">Female
                         </label>
                     </div>
 

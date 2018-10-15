@@ -110,7 +110,8 @@ require_once '../login/checklogin.php';
         $request = ($_POST['request']);
         $date = date('Y-m-d H:i:s');
         $status = "pending";
-        $qry = mysqli_query($link, "INSERT INTO userrequests (user_id, name, request, date, status) VALUES ('$userID','$name', '$request', '$date', ' $status')");
+        $qry = mysqli_query($link, "INSERT INTO userrequests (user_id, name, request, date) VALUES ('$userID','$name', '$request', '$date')");
+
         if ($qry) {
             Print '<script>alert("Successfully Recorded!");</script>'; //
             Print '<script>window.location.assign("addUserRequest.php");</script>';

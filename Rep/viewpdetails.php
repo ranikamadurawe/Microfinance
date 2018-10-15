@@ -59,7 +59,7 @@
     <div style="height:75px;">
 </div>
     <div id="content" class="col-lg-10 col-sm-10">
-        <h1 align="center"><b>Client Profile</b></h1>
+        <h1 align="center"><b>Representative Profile</b></h1>
         <div class=" row" align="center">
             <div class="col-md-8">
             </div>
@@ -124,6 +124,10 @@
                             <tr>
                                 <td class="lcolumn" width="20%"><label for="adress">Address </label> :</td>
                                 <td><?php echo '<label  name="address" class="add1">' . $row['address'] . '</label></br>' ?></td>
+                            </tr>
+                            <tr>
+                                <td class="lcolumn" width="20%"><label for="region">Region </label> :</td>
+                                <td><?php echo '<label  name="address" class="add1">' . $row['region'] . '</label></br>' ?></td>
                             </tr>
                         </table>
                     </form>
