@@ -11,7 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/Custom.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
@@ -54,12 +54,12 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="first-slide" src="img/car_1.jpg" alt="First slide">
+            <img class="first-slide" src="img/car_3.jpg" alt="First slide">
             <div class="container">
               <div class="carousel-caption text-left">
-                <h1>Example headline.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-secondary" href="#" role="button">Sign up today</a></p>
+                <h1>Banking to the village</h1>
+                <p>Now distance is not an Issue with Microbanking.tk</p>
+                
               </div>
             </div>
           </div>
@@ -67,19 +67,17 @@
             <img class="second-slide" src="img/car_2.jpg" alt="Second slide">
             <div class="container">
               <div class="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-secondary" href="#" role="button">Learn more</a></p>
+                <h1>Just a Breeze</h1>
+                <p> Asking for banking services is now easier than for ever</p>
               </div>
             </div>
           </div>
           <div class="carousel-item">
-            <img class="third-slide" src="img/car_3.jpg" alt="Third slide">
+            <img class="third-slide" src="img/car_1.jpg" alt="Third slide">
             <div class="container">
               <div class="carousel-caption text-right">
-                <h1>One more for good measure.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-secondary" href="#" role="button">Browse gallery</a></p>
+                <h1>Helping people who deserve Better</h1>
+                <p>Our services are there for any who need it</p>
               </div>
             </div>
           </div>
@@ -101,28 +99,6 @@
 
       <div class="container marketing">
 
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-          <div class="col-lg-4">
-            <img class="rounded-circle" src="img/middle_img.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <img class="rounded-circle" src="img/middle_img.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <img class="rounded-circle" src="img/middle_img.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-
 
         <!-- START THE FEATURETTES -->
 
@@ -130,8 +106,8 @@
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2 class="featurette-heading">Loan Services<span class="text-muted">When ever you need it </span></h2>
+            <p class="lead">Apply for Loans and consult and view your details in one place</p>
           </div>
           <div class="col-md-5">
             <img class="featurette-image img-fluid mx-auto" src="img/middle_img.jpg" alt="Generic placeholder image">
@@ -142,8 +118,8 @@
 
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2 class="featurette-heading">Transactions<span class="text-muted">To keep your money safe</span></h2>
+            <p class="lead">Keeping your hard earned money safe for a rainy day</p>
           </div>
           <div class="col-md-5 order-md-1">
             <img class="featurette-image img-fluid mx-auto" src="img/middle_img.jpg" alt="Generic placeholder image">
@@ -154,8 +130,8 @@
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2 class="featurette-heading">On the clock service<span class="text-muted">To help out with your concerns</span></h2>
+            <p class="lead">24x7 support by our caring and enthusiastic Staff for help and consultation when ever you need it</p>
           </div>
           <div class="col-md-5">
             <img class="featurette-image img-fluid mx-auto" src="img/middle_img.jpg" alt="Generic placeholder image">
@@ -182,11 +158,10 @@
             <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
 
               <!-- Content -->
-              <h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
-              <p>Here you can use rows and columns here to organize your footer content.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate esse
-                quasi, veritatis totam voluptas nostrum.</p>
-
+              <h5 class="font-weight-bold text-uppercase mb-4">Contact us</h5>
+              <p>+ 94 534534555</p>
+              <p>+ 74 435345555</p>
+              <p>bank@bank.com</p>
             </div>
             <!-- Grid column -->
 
@@ -235,20 +210,16 @@
               <ul class="list-unstyled">
                 <li>
                   <p>
-                    <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+                    <i class="fa fa-home mr-3"></i>HEAD OFFICES</p>
                 </li>
                 <li>
                   <p>
-                    <i class="fa fa-envelope mr-3"></i> info@example.com</p>
-                </li>
-                <li>
+                    <i class="fa fa-envelope mr-3"></i> New York, NY 10012, US</p>
+                </li>                <li>
                   <p>
-                    <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+                    <i class="fa fa-envelope mr-3"></i> Katubedda , CMB 20304 , SL</p>
                 </li>
-                <li>
-                  <p>
-                    <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
-                </li>
+                
               </ul>
 
             </div>
