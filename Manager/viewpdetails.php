@@ -121,6 +121,15 @@
                                 <td class="lcolumn" width="20%"><label for="adress">Address </label> :</td>
                                 <td><?php echo '<label  name="address" class="add1">' . $row['address'] . '</label></br>' ?></td>
                             </tr>
+                            <tr>
+                                <td class="lcolumn" width="20%"><label for="region">Region </label> :</td>
+                                <td><?php echo '<label  name="address" class="add1">' . $row['region'] . '</label></br>' ?></td>
+                            </tr>
+                            <tr>
+                                <td class="lcolumn" width="20%"><label for="branch">Branch </label> :</td>
+                                <td><?php echo '<label  name="address" class="add1">' . $row['branch'] . '</label></br>' ?></td>
+                            </tr>
+
                         </table>
                     </form>
                     <?php

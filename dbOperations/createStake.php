@@ -14,13 +14,13 @@ $provided_bday = trim($_POST['bday']);
 
 $rep_id = $_SESSION['rep']->getRepId();
 $connection = mysqli_connect("localhost", "jester","mafia","microfinance");
-$query = "INSERT INTO clients (`rep_id`, `birthday`, `username`, `first_name`, `last_name`, `email`, `tele_phone`, `address`, `gender`, `nic`) 
+$query = "INSERT INTO clients (`rep_id`, `birthday`, `username`, `first_name`, `last_name`, `email`, `tele_phone`, `address`, `gender`, `nic`, status) 
 VALUES ('$rep_id', '$provided_bday', '$provided_uname', '$provided_fname', '$provided_lname', '$provided_email', '$provided_phone', '$provided_address','$provided_gender', '$provided_nic', 'pending')";
 
 $result = mysqli_query($connection, $query);
 
 mysqli_close($connection);
 
-print_r($_POST);
+print_r($query);
 header('Location: ../Rep/viewclients.php ');
 ?>
